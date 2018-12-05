@@ -1,2 +1,2 @@
-# rss2twitter
-publish rss updates to twitter
+# rss2twitter - publish RSS updates to twitter
+

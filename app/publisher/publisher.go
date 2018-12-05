@@ -3,7 +3,6 @@ package publisher
 import (
 	"log"
 	"net/url"
-	"time"
 
 	"github.com/ChimeraCoder/anaconda"
 	"github.com/umputun/rss2twitter/app/rss"
@@ -31,8 +30,8 @@ type Twitter struct {
 
 // Publish to twitter
 func (t Twitter) Publish(event rss.Event, formatter func(rss.Event) string) error {
+	log.Printf("[INFO] publish %+v", event)
 	api := anaconda.NewTwitterApiWithCredentials(t.AccessToken, t.AccessSecret, t.ConsumerKey, t.ConsumerSecret)
-	api.SetDelay(5 * time.Second)
 	_, err := api.PostTweet(formatter(event), url.Values{})
 	return err
 }

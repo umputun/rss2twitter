@@ -30,6 +30,7 @@ type Event struct {
 func New(ctx context.Context, feed string, duration time.Duration) *Notify {
 	res := Notify{feed: feed, duration: duration}
 	res.ctx, res.cancel = context.WithCancel(ctx)
+	log.Printf("[INFO] crate notifier for %q, %s", feed, duration)
 	return &res
 }
 
@@ -54,6 +55,7 @@ func (n *Notify) Go() <-chan Event {
 			event := n.feedEvent(feedData)
 			if lastGUID != event.guid {
 				if lastGUID != "" {
+					log.Printf("[DEBUG] new event %s", event.guid)
 					ch <- event
 				}
 				lastGUID = event.guid

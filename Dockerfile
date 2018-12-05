@@ -49,7 +49,6 @@ COPY --from=build /go/src/github.com/umputun/rss2twitter/rss2twitter /srv/rss2tw
 RUN chown -R app:app /srv
 RUN chmod +x /srv/rss2twitter
 
-EXPOSE 7070
 WORKDIR /srv
 
 CMD ["/srv/rss2twitter"]

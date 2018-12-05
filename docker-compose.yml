@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+
+  rss2twitter:
+    image: umputun/rss2twitter:latest
+    container_name: nginx
+    hostname: nginx
+    restart: always
+
+    logging: &default_logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+    environment:
+      - FEED=http://lorem-rss.herokuapp.com/feed?unit=second&interval=10
+      - CONSUMER_KEY
+      - CONSUMER_SECRET
+      - ACCESS_TOKEN
+      - ACCESS_SECRET

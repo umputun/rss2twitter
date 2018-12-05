@@ -15,14 +15,14 @@ import (
 )
 
 var opts struct {
-	Refresh time.Duration `short:"r" long:"refresh" env:"REFRESH" default:"30" description:"refresh interval"`
-	TimeOut time.Duration `short:"t" long:"timeout" env:"TIMEOUT" default:"5" description:"twitter timeout"`
-	Feed    string        `short:"f" long:"feed" env:"FEED" default:"" description:"rss feed url"`
+	Refresh time.Duration `short:"r" long:"refresh" env:"REFRESH" default:"30s" description:"refresh interval"`
+	TimeOut time.Duration `short:"t" long:"timeout" env:"TIMEOUT" default:"5s" description:"twitter timeout"`
+	Feed    string        `short:"f" long:"feed" env:"FEED" required:"true" description:"rss feed url"`
 
-	ConsumerKey    string `long:"consumer-key" env:"CONSUMER_KEY" default:"" description:"twitter consumer key"`
-	ConsumerSecret string `long:"consumer-secret" env:"CONSUMER_SECRET" default:"" description:"twitter consumer secret"`
-	AccessToken    string `long:"access-token" env:"ACCESS_TOKEN" default:"" description:"twitter access token"`
-	AccessSecret   string `long:"access-secret" env:"ACCESS_SECRET" default:"" description:"twitter access secret"`
+	ConsumerKey    string `long:"consumer-key" env:"CONSUMER_KEY" required:"true" description:"twitter consumer key"`
+	ConsumerSecret string `long:"consumer-secret" env:"CONSUMER_SECRET" required:"true" description:"twitter consumer secret"`
+	AccessToken    string `long:"access-token" env:"ACCESS_TOKEN" required:"true" description:"twitter access token"`
+	AccessSecret   string `long:"access-secret" env:"ACCESS_SECRET" required:"true" description:"twitter access secret"`
 
 	Dbg bool `long:"dbg" env:"DEBUG" description:"debug mode"`
 }
@@ -30,7 +30,7 @@ var opts struct {
 var revision = "unknown"
 
 func main() {
-	fmt.Printf("RSS2TWITTER - %s", revision)
+	fmt.Printf("RSS2TWITTER - %s\n", revision)
 	if _, err := flags.Parse(&opts); err != nil {
 		os.Exit(1)
 	}

@@ -2,6 +2,22 @@
 
 
 [[projects]]
+  digest = "1:2ee1ec060a2e71d2eb24755cb3f3867c52faa9895d2287d3c3bf09b01020cf32"
+  name = "github.com/ChimeraCoder/anaconda"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "9c68684170b980d5b4c2ed08fae9b530e659904d"
+  version = "v2.0.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:088fd1efa8fcd4f85c3e3c0d135f28114115517a2b215f2e39b67146d032ea33"
+  name = "github.com/ChimeraCoder/tokenbucket"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c5a927568de7aad8a58127d80bcd36ca4e71e454"
+
+[[projects]]
   digest = "1:573fa46f8d413d4bc3f7cc5e86b2c43cb21559f4fb0a19d9874d228e28fdc07c"
   name = "github.com/PuerkitoBio/goquery"
   packages = ["."]
@@ -18,12 +34,44 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:863cb3d06b96794fd14a54579116b7e704cd8bc395e9d0404a5ad236d3e198b4"
+  name = "github.com/azr/backoff"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "53511d3c733003985b0b76f733df1f4d0095ee6a"
+
+[[projects]]
   digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   pruneopts = "UT"
   revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
   version = "v1.1.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:efe7dc6d12119a36c1a617b574e99ac9c5ca8fbff57eb283a60462552b7c782a"
+  name = "github.com/dustin/go-jsonpointer"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ba0abeacc3dcca5b9b20f31509c46794edbc9965"
+
+[[projects]]
+  branch = "master"
+  digest = "1:07263fbfa1c038e890b410f730279aa7adc217180f1c2f78c6dc80b3bbe9e819"
+  name = "github.com/dustin/gojson"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2e71ec9dd5adce3b168cd0dbde03b5cc04951c30"
+
+[[projects]]
+  branch = "master"
+  digest = "1:b5cfd8d62c46082a75974f2f5e167c272f7f7d47c7a21caf49b17a45a558a601"
+  name = "github.com/garyburd/go-oauth"
+  packages = ["oauth"]
+  pruneopts = "UT"
+  revision = "bca2e7f09a178fd36b034107a00e2323bca6a82e"
 
 [[projects]]
   digest = "1:16ae35b3a854c667baaf55ff5d455c486f7c2baf040a2727f2ef0e4b096b2a95"
@@ -84,9 +132,10 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:5193d913046443e59093d66a97a40c51f4a5ea4ceba60f3b3ecf89694de5d16f"
+  digest = "1:6d5ed712653ea5321fe3e3475ab2188cf362a4e0d31e9fd3acbd4dfbbca0d680"
   name = "golang.org/x/net"
   packages = [
+    "context",
     "html",
     "html/atom",
     "html/charset",
@@ -124,6 +173,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/ChimeraCoder/anaconda",
     "github.com/hashicorp/logutils",
     "github.com/jessevdk/go-flags",
     "github.com/mmcdole/gofeed",
