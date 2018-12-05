@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"fmt"
 	"log"
 	"os"
 	"time"
 
+	"github.com/alecthomas/template"
 	"github.com/umputun/rss2twitter/app/publisher"
 
 	"github.com/hashicorp/logutils"
@@ -24,7 +26,8 @@ var opts struct {
 	AccessToken    string `long:"access-token" env:"ACCESS_TOKEN" required:"true" description:"twitter access token"`
 	AccessSecret   string `long:"access-secret" env:"ACCESS_SECRET" required:"true" description:"twitter access secret"`
 
-	Dbg bool `long:"dbg" env:"DEBUG" description:"debug mode"`
+	Template string `long:"template" env:"TEMPLATE" default:"{{.Title}} - {{.Link}}" description:"twitter message template"`
+	Dbg      bool   `long:"dbg" env:"DEBUG" description:"debug mode"`
 }
 
 var revision = "unknown"
@@ -47,7 +50,11 @@ func main() {
 
 	for event := range notifier.Go() {
 		err := pub.Publish(event, func(r rss.Event) string {
-			return fmt.Sprintf("%s - %s", r.Title, r.Link)
+			b1 := bytes.Buffer{}
+			if err := template.Must(template.New("twi").Parse(opts.Template)).Execute(&b1, event); err != nil {
+				return fmt.Sprintf("%s - %s", r.Title, r.Link)
+			}
+			return b1.String()
 		})
 		if err != nil {
 			log.Printf("[WARN] failed to publish, %s", err)
