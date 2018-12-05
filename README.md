@@ -11,11 +11,11 @@ Use provided `docker-compose.yml` and change `FEED` value. All twiter-api creden
 ```
 Application Options:
   -r, --refresh=         refresh interval (default: 30s) [$REFRESH]
-  -t, --timeout=         twitter timeout (default: 5s) [$TIMEOUT]
   -f, --feed=            rss feed url [$FEED]
       --consumer-key=    twitter consumer key [$CONSUMER_KEY]
       --consumer-secret= twitter consumer secret [$CONSUMER_SECRET]
       --access-token=    twitter access token [$ACCESS_TOKEN]
       --access-secret=   twitter access secret [$ACCESS_SECRET]
+      --template=        twitter message template (default: {{.Title}} - {{.Link}}) [$TEMPLATE]
       --dbg              debug mode [$DEBUG]
 ```
