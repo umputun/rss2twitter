@@ -27,6 +27,7 @@ var opts struct {
 	AccessSecret   string `long:"access-secret" env:"ACCESS_SECRET" required:"true" description:"twitter access secret"`
 
 	Template string `long:"template" env:"TEMPLATE" default:"{{.Title}} - {{.Link}}" description:"twitter message template"`
+	Dry      bool   `long:"dry" env:"DRY" description:"dry mode"`
 	Dbg      bool   `long:"dbg" env:"DEBUG" description:"debug mode"`
 }
 
@@ -41,11 +42,16 @@ func main() {
 	setupLog(opts.Dbg)
 
 	notifier := rss.New(context.Background(), opts.Feed, opts.Refresh)
-	pub := publisher.Twitter{
+	var pub publisher.Interface
+	pub = publisher.Twitter{
 		ConsumerKey:    opts.ConsumerKey,
 		ConsumerSecret: opts.ConsumerSecret,
 		AccessToken:    opts.AccessToken,
 		AccessSecret:   opts.AccessSecret,
+	}
+	if opts.Dry {
+		pub = publisher.Stdout{}
+		log.Print("[INFO] dry mode")
 	}
 
 	for event := range notifier.Go() {
