@@ -12,11 +12,6 @@ ARG TRAVIS_PULL_REQUEST
 ARG TRAVIS_PULL_REQUEST_SHA
 ARG TRAVIS_REPO_SLUG
 ARG TRAVIS_TAG
-ARG DRONE
-ARG DRONE_TAG
-ARG DRONE_COMMIT
-ARG DRONE_BRANCH
-ARG DRONE_PULL_REQUEST
 
 WORKDIR /go/src/github.com/umputun/rss2twitter
 ADD . /go/src/github.com/umputun/rss2twitter
@@ -38,7 +33,9 @@ RUN if [ -z "$COVERALLS_TOKEN" ] ; then \
     else goveralls -coverprofile=.cover/cover.out -service=travis-ci -repotoken $COVERALLS_TOKEN || echo "coverall failed!"; fi
 
 RUN \
-    version=$(/script/git-rev.sh) && \
+    if [ -z "$TRAVIS" ] ; then \
+    echo "runs outside of travis" && version=$(/script/git-rev.sh); \
+    else version=${TRAVIS_TAG}${TRAVIS_BRANCH}${TRAVIS_PULL_REQUEST}-${TRAVIS_COMMIT:0:7}-$(date +%Y%m%dT%H:%M:%S); fi && \
     echo "version=$version" && \
     go build -o rss2twitter -ldflags "-X main.revision=${version} -s -w" ./app
 
