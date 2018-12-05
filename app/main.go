@@ -21,10 +21,10 @@ var opts struct {
 	TimeOut time.Duration `short:"t" long:"timeout" env:"TIMEOUT" default:"5s" description:"twitter timeout"`
 	Feed    string        `short:"f" long:"feed" env:"FEED" required:"true" description:"rss feed url"`
 
-	ConsumerKey    string `long:"consumer-key" env:"CONSUMER_KEY" required:"true" description:"twitter consumer key"`
-	ConsumerSecret string `long:"consumer-secret" env:"CONSUMER_SECRET" required:"true" description:"twitter consumer secret"`
-	AccessToken    string `long:"access-token" env:"ACCESS_TOKEN" required:"true" description:"twitter access token"`
-	AccessSecret   string `long:"access-secret" env:"ACCESS_SECRET" required:"true" description:"twitter access secret"`
+	ConsumerKey    string `long:"consumer-key" env:"TWI_CONSUMER_KEY" required:"true" description:"twitter consumer key"`
+	ConsumerSecret string `long:"consumer-secret" env:"TWI_CONSUMER_SECRET" required:"true" description:"twitter consumer secret"`
+	AccessToken    string `long:"access-token" env:"TWI_ACCESS_TOKEN" required:"true" description:"twitter access token"`
+	AccessSecret   string `long:"access-secret" env:"TWI_ACCESS_SECRET" required:"true" description:"twitter access secret"`
 
 	Template string `long:"template" env:"TEMPLATE" default:"{{.Title}} - {{.Link}}" description:"twitter message template"`
 	Dry      bool   `long:"dry" env:"DRY" description:"dry mode"`
@@ -34,26 +34,27 @@ var opts struct {
 var revision = "unknown"
 
 func main() {
-	fmt.Printf("RSS2TWITTER - %s\n", revision)
+	fmt.Printf("rss2twitter - %s\n", revision)
 	if _, err := flags.Parse(&opts); err != nil {
 		os.Exit(1)
 	}
 
 	setupLog(opts.Dbg)
 
-	notifier := rss.New(context.Background(), opts.Feed, opts.Refresh)
+	notifier := rss.Notify{Feed: opts.Feed, Duration: opts.Refresh, Timeout: opts.TimeOut}
 	var pub publisher.Interface = publisher.Twitter{
 		ConsumerKey:    opts.ConsumerKey,
 		ConsumerSecret: opts.ConsumerSecret,
 		AccessToken:    opts.AccessToken,
 		AccessSecret:   opts.AccessSecret,
 	}
-	if opts.Dry {
+
+	if opts.Dry { // override publisher to stdout only, no actual twitter publishing
 		pub = publisher.Stdout{}
 		log.Print("[INFO] dry mode")
 	}
 
-	for event := range notifier.Go() {
+	for event := range notifier.Go(context.Background()) {
 		err := pub.Publish(event, func(r rss.Event) string {
 			b1 := bytes.Buffer{}
 			if err := template.Must(template.New("twi").Parse(opts.Template)).Execute(&b1, event); err != nil {
@@ -65,6 +66,7 @@ func main() {
 			log.Printf("[WARN] failed to publish, %s", err)
 		}
 	}
+	log.Print("[INFO] terminated")
 }
 
 func setupLog(dbg bool) {

@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net/http"
+	"sync"
 	"time"
 
 	"github.com/mmcdole/gofeed"
@@ -11,9 +12,11 @@ import (
 
 // Notify on RSS change
 type Notify struct {
-	feed     string
-	duration time.Duration
+	Feed     string
+	Duration time.Duration
+	Timeout  time.Duration
 
+	once   sync.Once
 	ctx    context.Context
 	cancel context.CancelFunc
 }
@@ -26,44 +29,52 @@ type Event struct {
 	guid      string
 }
 
-// New makes notifier for given rss feed. Checks for new items every duration
-func New(ctx context.Context, feed string, duration time.Duration) *Notify {
-	res := Notify{feed: feed, duration: duration}
-	res.ctx, res.cancel = context.WithCancel(ctx)
-	log.Printf("[INFO] crate notifier for %q, %s", feed, duration)
-	return &res
-}
-
 // Go starts notifier and returns events channel
-func (n *Notify) Go() <-chan Event {
+func (n *Notify) Go(ctx context.Context) <-chan Event {
+	log.Printf("[INFO] start notifier for %s, every %s", n.Feed, n.Duration)
+	n.once.Do(func() { n.ctx, n.cancel = context.WithCancel(ctx) })
+
 	ch := make(chan Event)
+
+	// wait for duration, can be terminated by ctx
+	waitOrCancel := func(ctx context.Context) bool {
+		select {
+		case <-ctx.Done():
+			return false
+		case <-time.After(n.Duration):
+			return true
+		}
+	}
+
 	go func() {
+
 		defer func() {
 			close(ch)
 			n.cancel()
 		}()
+
 		fp := gofeed.NewParser()
-		fp.Client = &http.Client{Timeout: time.Second * 5}
+		fp.Client = &http.Client{Timeout: n.Timeout}
 		lastGUID := ""
 		for {
-			feedData, err := fp.ParseURL(n.feed)
+			feedData, err := fp.ParseURL(n.Feed)
 			if err != nil {
-				log.Printf("[WARN] failed to fetch from %s, %s", n.feed, err)
-				time.Sleep(n.duration)
+				log.Printf("[WARN] failed to fetch from %s, %s", n.Feed, err)
+				if !waitOrCancel(n.ctx) {
+					return
+				}
 				continue
 			}
 			event := n.feedEvent(feedData)
 			if lastGUID != event.guid {
-				if lastGUID != "" {
+				if lastGUID != "" { // don't notify on initial change
 					log.Printf("[DEBUG] new event %s", event.guid)
 					ch <- event
 				}
 				lastGUID = event.guid
 			}
-			select {
-			case <-n.ctx.Done():
+			if !waitOrCancel(n.ctx) {
 				return
-			case <-time.After(n.duration):
 			}
 		}
 	}()
