@@ -36,7 +36,7 @@ RUN if [ -z "$COVERALLS_TOKEN" ] ; then \
 RUN \
     if [ -z "$TRAVIS" ] ; then \
     echo "runs outside of travis" && version=$(/script/git-rev.sh); \
-    else version=${TRAVIS_TAG}${TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}-${TRAVIS_COMMIT:0:7}-$(date +%Y%m%dT%H:%M:%S); fi && \
+    else version=${TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}-${TRAVIS_COMMIT:0:7}-$(date +%Y%m%dT%H:%M:%S); fi && \
     echo "version=$version" && \
     go build -o rss2twitter -ldflags "-X main.revision=${version} -s -w" ./app
 
