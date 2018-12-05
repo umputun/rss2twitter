@@ -42,8 +42,7 @@ func main() {
 	setupLog(opts.Dbg)
 
 	notifier := rss.New(context.Background(), opts.Feed, opts.Refresh)
-	var pub publisher.Interface
-	pub = publisher.Twitter{
+	var pub publisher.Interface = publisher.Twitter{
 		ConsumerKey:    opts.ConsumerKey,
 		ConsumerSecret: opts.ConsumerSecret,
 		AccessToken:    opts.AccessToken,
