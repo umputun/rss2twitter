@@ -5,6 +5,7 @@ import (
 	"net/url"
 
 	"github.com/ChimeraCoder/anaconda"
+
 	"github.com/umputun/rss2twitter/app/rss"
 )
 

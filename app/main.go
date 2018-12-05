@@ -9,10 +9,10 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/umputun/rss2twitter/app/publisher"
-
 	"github.com/hashicorp/logutils"
 	"github.com/jessevdk/go-flags"
+
+	"github.com/umputun/rss2twitter/app/publisher"
 	"github.com/umputun/rss2twitter/app/rss"
 )
 
