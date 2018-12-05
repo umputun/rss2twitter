@@ -25,9 +25,9 @@ ADD . /go/src/github.com/umputun/rss2twitter
 RUN cd app && go test ./...
 
 # linters
-RUN gometalinter --disable-all --deadline=300s --vendor --enable=vet --enable=vetshadow --enable=golint \
-    --enable=staticcheck --enable=ineffassign --enable=errcheck --enable=unconvert \
-    --enable=deadcode  --enable=gosimple --exclude=test --exclude=mock --exclude=vendor ./...
+RUN golangci-lint run --out-format=tab --disable-all --tests=false --enable=interfacer --enable=unconvert --enable=megacheck \
+    --enable=structcheck --enable=gas --enable=gocyclo --enable=dupl --enable=misspell --enable=maligned --enable=unparam \
+    --enable=varcheck --enable=deadcode --enable=typecheck --enable=errcheck ./...
 
 # coverage report
 RUN mkdir -p target && /script/coverage.sh
