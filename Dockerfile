@@ -46,8 +46,9 @@ RUN \
 FROM umputun/baseimage:app-latest
 
 COPY --from=build /go/src/github.com/umputun/rss2twitter/rss2twitter /srv/rss2twitter
-RUN chown -R app:app /srv
-RUN chmod +x /srv/rss2twitter
+RUN \
+    chown -R app:app /srv && \
+    chmod +x /srv/rss2twitter
 
 WORKDIR /srv
 
