@@ -46,9 +46,12 @@ func main() {
 	}
 
 	for event := range notifier.Go() {
-		pub.Publish(event, func(r rss.Event) string {
+		err := pub.Publish(event, func(r rss.Event) string {
 			return fmt.Sprintf("%s - %s", r.Title, r.Link)
 		})
+		if err != nil {
+			log.Printf("[WARN] failed to publish, %s", err)
+		}
 	}
 }
 
