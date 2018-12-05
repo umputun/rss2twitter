@@ -1,0 +1,1431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+	<channel>
+		<title>
+			Радио-Т
+		</title>
+		<link>
+			https://radio-t.com
+		</link>
+		<language>
+			ru
+		</language>
+		<copyright>
+			Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License.
+		</copyright>
+		<author>
+			Umputun, Bobuk, Gray, Ksenks
+		</author>
+		<subtitle>
+			Еженедельные импровизации на хай–тек темы
+		</subtitle>
+		<description>
+			Разговоры на темы хайтек, высоких компьютерных технологий, гаджетов, облаков, программирования и прочего интересного из мира ИТ.
+		</description>
+		<explicit>
+			no
+		</explicit>
+		<image href="https://radio-t.com/images/cover.jpg" />
+		<keywords>
+			hitech,russian,radiot,tech,news,радио
+		</keywords>
+		<link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/radio-t" />
+		<info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="radio-t" />
+		<link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
+		<copyright>
+			Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License.
+		</copyright>
+		<thumbnail url="https://radio-t.com/images/cover.jpg" />
+		<keywords>
+			hitech,russian,radiot,tech,news,радио
+		</keywords>
+		<category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">
+			Technology/Tech News
+		</category>
+		<category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">
+			Technology/Gadgets
+		</category>
+		<owner>
+			<email>
+				podcast@radio-t.com
+			</email>
+			<name>
+				Umputun, Bobuk, Gray, Ksenks
+			</name>
+		</owner>
+		<summary>
+			Еженедельные импровизации на хай–тек темы
+		</summary>
+		<category text="Technology">
+			<category text="Tech News" />
+		</category>
+		<category text="Technology">
+			<category text="Gadgets" />
+		</category>
+		<item>
+			<title>
+				Радио-Т 625
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt625.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.cnet.com/news/logitech-reportedly-in-talks-to-acquire-plantronics/">Logitech приобретает Plantronics</a>.</li>
+				<li><a href="https://bossasaservice.life">Boss as a Service</a>.</li>
+				<li><a href="https://gcemetery.co/">Кладбище проектов Google</a>.</li>
+				<li><a href="https://developer.github.com/actions/creating-workflows/creating-a-new-workflow/">Actions в реальной жизни</a>.</li>
+				<li><a href="https://www.forbes.com/sites/janakirammsv/2018/11/21/aws-adds-the-most-anticipated-feature-to-amazon-ec2/">AWS добавила ума EC2</a>.</li>
+				<li><a href="https://habr.com/post/427211/">Electron это Flash для десктопа</a>.</li>
+				<li><a href="http://blairreeves.me/2018/11/09/dont-work-remotely/?resubmit=hn">Как решить вопрос удаленной работы</a>.</li>
+				<li><a href="https://mashable.com/article/amazon-customer-data-leak/">Amazon потеряла данные пользователей</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast625.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-625.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast625.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/11/24/podcast-625/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/11/24//podcast-625/
+			</guid>
+			<pubDate>
+				Sat, 24 Nov 2018 17:59:34 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt625.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.cnet.com/news/logitech-reportedly-in-talks-to-acquire-plantronics/">Logitech приобретает Plantronics</a>.</li>
+				<li><a href="https://bossasaservice.life">Boss as a Service</a>.</li>
+				<li><a href="https://gcemetery.co/">Кладбище проектов Google</a>.</li>
+				<li><a href="https://developer.github.com/actions/creating-workflows/creating-a-new-workflow/">Actions в реальной жизни</a>.</li>
+				<li><a href="https://www.forbes.com/sites/janakirammsv/2018/11/21/aws-adds-the-most-anticipated-feature-to-amazon-ec2/">AWS добавила ума EC2</a>.</li>
+				<li><a href="https://habr.com/post/427211/">Electron это Flash для десктопа</a>.</li>
+				<li><a href="http://blairreeves.me/2018/11/09/dont-work-remotely/?resubmit=hn">Как решить вопрос удаленной работы</a>.</li>
+				<li><a href="https://mashable.com/article/amazon-customer-data-leak/">Amazon потеряла данные пользователей</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast625.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-625.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast625.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt625.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast625.mp3" type="audio/mp3" length="90301564" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast625.mp3" fileSize="90301564" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 624
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt624.jpg" alt=""></p>
+				<ul>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49615">Время поддержки Ubuntu 18.04 увеличено до 10 лет</a> - <em>00:04:02</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49594">HTTP поверх протокола QUIC будет HTTP/3</a> - <em>00:13:11</em>.</li>
+				<li><a href="https://outline.com/UzUdUE">Larry сказал лишнего</a> - <em>00:27:33</em>.</li>
+				<li><a href="https://www.itnews.com.au/news/amazon-and-oracle-in-database-drama-515447">Amazon, Oracle и драма вокруг БД</a> - <em>00:34:38</em>.</li>
+				<li><a href="https://aws.amazon.com/corretto/">Corretto для LTS OpenJDK</a> - <em>00:34:48</em>.</li>
+				<li><a href="https://news.ycombinator.com/item?id=18442941">Ужас кодовой базы</a> - <em>00:43:46</em>.</li>
+				<li><a href="https://habr.com/post/429612/">Фулстеки — это вечные мидлы</a> - <em>00:55:05</em>.</li>
+				<li><a href="https://www.theverge.com/2018/11/14/18095729/mark-zuckerberg-order-facebook-executive-android-phones">Всех посадить на андроид телефоны</a> - <em>01:09:55</em>.</li>
+				<li><a href="https://techcrunch.com/2018/11/15/facebook-borderline-content/">Facebook введет еще больше цензуры</a> - <em>01:15:03</em>.</li>
+				<li><a href="https://www.bleepingcomputer.com/news/security/cloudflare-brings-its-1111-dns-service-to-android-and-ios-mobile-devices/">Cloudflare с 1.1.1.1 DNS на телефонах</a> - <em>01:23:25</em>.</li>
+				<li><a href="https://pastebin.com/bwvqHhbA?fbclid=IwAR3Nk2wKnv4MjRycU0oQQas5eXQ3v5x9Or_KAsefmgmykH0PviLS74fIR1c">Мифический взлом Protonmail</a> - <em>01:32:22</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast624.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-624.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast624.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/11/17/podcast-624/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/11/17//podcast-624/
+			</guid>
+			<pubDate>
+				Sat, 17 Nov 2018 17:31:06 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt624.jpg" alt=""></p>
+				<ul>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49615">Время поддержки Ubuntu 18.04 увеличено до 10 лет</a> - <em>00:04:02</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49594">HTTP поверх протокола QUIC будет HTTP/3</a> - <em>00:13:11</em>.</li>
+				<li><a href="https://outline.com/UzUdUE">Larry сказал лишнего</a> - <em>00:27:33</em>.</li>
+				<li><a href="https://www.itnews.com.au/news/amazon-and-oracle-in-database-drama-515447">Amazon, Oracle и драма вокруг БД</a> - <em>00:34:38</em>.</li>
+				<li><a href="https://aws.amazon.com/corretto/">Corretto для LTS OpenJDK</a> - <em>00:34:48</em>.</li>
+				<li><a href="https://news.ycombinator.com/item?id=18442941">Ужас кодовой базы</a> - <em>00:43:46</em>.</li>
+				<li><a href="https://habr.com/post/429612/">Фулстеки — это вечные мидлы</a> - <em>00:55:05</em>.</li>
+				<li><a href="https://www.theverge.com/2018/11/14/18095729/mark-zuckerberg-order-facebook-executive-android-phones">Всех посадить на андроид телефоны</a> - <em>01:09:55</em>.</li>
+				<li><a href="https://techcrunch.com/2018/11/15/facebook-borderline-content/">Facebook введет еще больше цензуры</a> - <em>01:15:03</em>.</li>
+				<li><a href="https://www.bleepingcomputer.com/news/security/cloudflare-brings-its-1111-dns-service-to-android-and-ios-mobile-devices/">Cloudflare с 1.1.1.1 DNS на телефонах</a> - <em>01:23:25</em>.</li>
+				<li><a href="https://pastebin.com/bwvqHhbA?fbclid=IwAR3Nk2wKnv4MjRycU0oQQas5eXQ3v5x9Or_KAsefmgmykH0PviLS74fIR1c">Мифический взлом Protonmail</a> - <em>01:32:22</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast624.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-624.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast624.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt624.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast624.mp3" type="audio/mp3" length="75515997" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast624.mp3" fileSize="75515997" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 623
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt623.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://marco.org/2018/11/06/mac-mini-2018-review">2018 Mac Mini</a> - <em>00:06:00</em>.</li>
+				<li><a href="https://www.theverge.com/2018/11/5/18062612/apple-ipad-pro-review-2018-screen-usb-c-pencil-price-features">Apple iPad Pro 2018</a> - <em>00:27:32</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49580">GitHub преодолел рубеж в 100 млн репозиториев</a> - <em>00:47:22</em>.</li>
+				<li><a href="https://mashable.com/article/amazon-apple-sell-iphones-no-homepod/">Amazon начинает продавать продукты Apple</a> - <em>01:16:12</em>.</li>
+				<li><a href="https://techcrunch.com/2018/11/07/samsung-shares-a-glimpse-of-its-folding-infinity-flex-display-smartphone/">Samsung показал телефон с гибким дисплеем</a> - <em>01:29:03</em>.</li>
+				<li><a href="https://mashable.com/article/foldable-phones-fad/">Складные экраны надолго или это мода</a> - <em>01:33:21</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast623.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-623.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast623.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/11/10/podcast-623/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/11/10//podcast-623/
+			</guid>
+			<pubDate>
+				Sat, 10 Nov 2018 18:09:36 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt623.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://marco.org/2018/11/06/mac-mini-2018-review">2018 Mac Mini</a> - <em>00:06:00</em>.</li>
+				<li><a href="https://www.theverge.com/2018/11/5/18062612/apple-ipad-pro-review-2018-screen-usb-c-pencil-price-features">Apple iPad Pro 2018</a> - <em>00:27:32</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49580">GitHub преодолел рубеж в 100 млн репозиториев</a> - <em>00:47:22</em>.</li>
+				<li><a href="https://mashable.com/article/amazon-apple-sell-iphones-no-homepod/">Amazon начинает продавать продукты Apple</a> - <em>01:16:12</em>.</li>
+				<li><a href="https://techcrunch.com/2018/11/07/samsung-shares-a-glimpse-of-its-folding-infinity-flex-display-smartphone/">Samsung показал телефон с гибким дисплеем</a> - <em>01:29:03</em>.</li>
+				<li><a href="https://mashable.com/article/foldable-phones-fad/">Складные экраны надолго или это мода</a> - <em>01:33:21</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast623.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-623.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast623.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt623.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast623.mp3" type="audio/mp3" length="87763507" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast623.mp3" fileSize="87763507" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 622
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt622.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.redhat.com/en/blog/red-hat-ibm-creating-leading-hybrid-cloud-provider">Red Hat + IBM</a>.</li>
+				<li><a href="https://stratechery.com/2018/ibms-old-playbook/">IBM борется за облачный рынок</a>.</li>
+				<li><a href="https://jriddell.org/2018/11/02/red-hat-and-kde/">Red Hat убил KDE</a>.</li>
+				<li><a href="https://www.wired.com/story/everything-apple-announced-ipad-pro-macbook-air-mac-mini/?mbid=social_twitter">Apple с новыми MacBook Air и Mac Mini</a>.</li>
+				<li><a href="https://habr.com/post/428409/">Анализ инцидента 21 октября на GitHub</a>.</li>
+				<li><a href="https://github.com/sharkdp/bat">Как cat, но лучше</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast622.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-622.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast622.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/11/03/podcast-622/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/11/03//podcast-622/
+			</guid>
+			<pubDate>
+				Sat, 03 Nov 2018 18:12:55 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt622.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.redhat.com/en/blog/red-hat-ibm-creating-leading-hybrid-cloud-provider">Red Hat + IBM</a>.</li>
+				<li><a href="https://stratechery.com/2018/ibms-old-playbook/">IBM борется за облачный рынок</a>.</li>
+				<li><a href="https://jriddell.org/2018/11/02/red-hat-and-kde/">Red Hat убил KDE</a>.</li>
+				<li><a href="https://www.wired.com/story/everything-apple-announced-ipad-pro-macbook-air-mac-mini/?mbid=social_twitter">Apple с новыми MacBook Air и Mac Mini</a>.</li>
+				<li><a href="https://habr.com/post/428409/">Анализ инцидента 21 октября на GitHub</a>.</li>
+				<li><a href="https://github.com/sharkdp/bat">Как cat, но лучше</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast622.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-622.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast622.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt622.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast622.mp3" type="audio/mp3" length="88746234" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast622.mp3" fileSize="88746234" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 621
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt621.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://lwn.net/Articles/769110/">Linux 4.19 – главный вернулся</a> - <em>00:04:00</em>.</li>
+				<li><a href="https://blog.github.com/2018-10-21-october21-incident-report/">Болезненное падение Github</a> - <em>00:31:24</em>.</li>
+				<li><a href="https://www.macrumors.com/2018/10/26/what-to-expect-at-october-30-apple-event/">Что ожидать от внезапного события</a> - <em>00:44:02</em>.</li>
+				<li><a href="https://blog.github.com/2018-10-26-github-and-microsoft/">Покупка завершена</a> - <em>01:13:50</em>.</li>
+				<li><a href="https://github.com/akavel/up">Ultimate Plumber</a> - <em>01:21:44</em>.</li>
+				<li><a href="https://habr.com/post/427265/">Protobuffers — это неправильно</a> - <em>01:34:55</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast621.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-621.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast621.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/10/27/podcast-621/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/10/27//podcast-621/
+			</guid>
+			<pubDate>
+				Sat, 27 Oct 2018 19:06:08 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt621.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://lwn.net/Articles/769110/">Linux 4.19 – главный вернулся</a> - <em>00:04:00</em>.</li>
+				<li><a href="https://blog.github.com/2018-10-21-october21-incident-report/">Болезненное падение Github</a> - <em>00:31:24</em>.</li>
+				<li><a href="https://www.macrumors.com/2018/10/26/what-to-expect-at-october-30-apple-event/">Что ожидать от внезапного события</a> - <em>00:44:02</em>.</li>
+				<li><a href="https://blog.github.com/2018-10-26-github-and-microsoft/">Покупка завершена</a> - <em>01:13:50</em>.</li>
+				<li><a href="https://github.com/akavel/up">Ultimate Plumber</a> - <em>01:21:44</em>.</li>
+				<li><a href="https://habr.com/post/427265/">Protobuffers — это неправильно</a> - <em>01:34:55</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast621.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-621.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast621.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt621.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast621.mp3" type="audio/mp3" length="100691507" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast621.mp3" fileSize="100691507" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 620
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt620.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://techcrunch.com/2018/10/16/github-launches-actions-its-workflow-automation-tool/">GitHub добавил Actions</a> - <em>00:04:00</em>.</li>
+				<li><a href="https://techcrunch.com/2018/10/16/mongodb-switches-up-its-open-source-license/">MongoDB поменяла лицензию</a> - <em>00:49:29</em>.</li>
+				<li><a href="https://www.winamp.com/">Winamp через 5 лет</a> - <em>00:57:45</em>.</li>
+				<li><a href="https://techcrunch.com/2018/10/15/palm-returns-as-an-ultra-mobile-smartphone/">Palm возвращается в странном виде</a> - <em>01:00:59</em>.</li>
+				<li><a href="https://thehelm.com/">Helm для почти локальной почты</a> - <em>01:24:31</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast620.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-620.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast620.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/10/20/podcast-620/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/10/20//podcast-620/
+			</guid>
+			<pubDate>
+				Sat, 20 Oct 2018 18:17:33 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt620.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://techcrunch.com/2018/10/16/github-launches-actions-its-workflow-automation-tool/">GitHub добавил Actions</a> - <em>00:04:00</em>.</li>
+				<li><a href="https://techcrunch.com/2018/10/16/mongodb-switches-up-its-open-source-license/">MongoDB поменяла лицензию</a> - <em>00:49:29</em>.</li>
+				<li><a href="https://www.winamp.com/">Winamp через 5 лет</a> - <em>00:57:45</em>.</li>
+				<li><a href="https://techcrunch.com/2018/10/15/palm-returns-as-an-ultra-mobile-smartphone/">Palm возвращается в странном виде</a> - <em>01:00:59</em>.</li>
+				<li><a href="https://thehelm.com/">Helm для почти локальной почты</a> - <em>01:24:31</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast620.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-620.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast620.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt620.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast620.mp3" type="audio/mp3" length="80076454" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast620.mp3" fileSize="80076454" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 619
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt619.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://blog.google/technology/safety-security/project-strobe/">Как гугл внезапно закрыл Google+</a> - <em>00:03:45</em>.</li>
+				<li><a href="https://www.engadget.com/2018/10/12/goodbye-google-plus-you-beautiful-squandered-opportunity/">Чо посшло не так с Google+</a> - <em>00:09:12</em>.</li>
+				<li><a href="https://www.gijsk.com/blog/2018/10/firefox-removes-core-product-support-for-rss-atom-feeds/">Firefox убрал поддержку RSS/Atom</a> - <em>00:25:47</em>.</li>
+				<li><a href="https://code.visualstudio.com/docs/supporting/faq">Отучить VSCode от плохих привычек</a> - <em>00:39:18</em>.</li>
+				<li><a href="https://www.theverge.com/2018/10/10/17958784/ai-recruiting-tool-bias-amazon-report">Amazon разработал сексисткий AI</a> - <em>01:02:55</em>.</li>
+				<li><a href="https://medium.com/@jdxcode/12-factor-cli-apps-dd3c227a0e46">12 факторов для CLI</a> - <em>01:14:13</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast619.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-619.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast619.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/10/13/podcast-619/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/10/13//podcast-619/
+			</guid>
+			<pubDate>
+				Sat, 13 Oct 2018 18:20:54 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt619.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://blog.google/technology/safety-security/project-strobe/">Как гугл внезапно закрыл Google+</a> - <em>00:03:45</em>.</li>
+				<li><a href="https://www.engadget.com/2018/10/12/goodbye-google-plus-you-beautiful-squandered-opportunity/">Чо посшло не так с Google+</a> - <em>00:09:12</em>.</li>
+				<li><a href="https://www.gijsk.com/blog/2018/10/firefox-removes-core-product-support-for-rss-atom-feeds/">Firefox убрал поддержку RSS/Atom</a> - <em>00:25:47</em>.</li>
+				<li><a href="https://code.visualstudio.com/docs/supporting/faq">Отучить VSCode от плохих привычек</a> - <em>00:39:18</em>.</li>
+				<li><a href="https://www.theverge.com/2018/10/10/17958784/ai-recruiting-tool-bias-amazon-report">Amazon разработал сексисткий AI</a> - <em>01:02:55</em>.</li>
+				<li><a href="https://medium.com/@jdxcode/12-factor-cli-apps-dd3c227a0e46">12 факторов для CLI</a> - <em>01:14:13</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast619.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-619.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast619.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt619.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast619.mp3" type="audio/mp3" length="85528209" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast619.mp3" fileSize="85528209" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 618
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt618.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://blog.digitalocean.com/custom-images/">Custom Image теперь и в DigitalOcean</a> - <em>00:13:36</em>.</li>
+				<li><a href="https://techcrunch.com/2018/10/05/scaleway-adds-object-storage/">Scaleway добавила object storage</a> - <em>00:25:05</em>.</li>
+				<li><a href="https://blog.cloudflare.com/introducing-workers-kv/">Workers KV - больше чем KV</a> - <em>00:33:26</em>.</li>
+				<li><a href="https://blog.cloudflare.com/building-with-workers-kv/">Технические детали Workers KV</a> - <em>00:37:58</em>.</li>
+				<li><a href="https://www.androidcentral.com/android-developers-love-kotlin">Kotlin проникает в Google Cloud Platform</a> - <em>00:46:08</em>.</li>
+				<li><a href="https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/">Что не так с конкурентностью в Go</a> - <em>01:06:24</em>.</li>
+				<li><a href="https://eli.thegreenplace.net/2018/go-hits-the-concurrency-nail-right-on-the-head/">Все так с конкурентностью в Go</a> - <em>01:12:38</em>.</li>
+				<li><a href="https://www.lightbluetouchpaper.org/2018/10/05/making-sense-of-the-supermicro-motherboard-attack/">Supermicro motherboard attack</a> - <em>01:32:44</em>.</li>
+				<li><a href="https://developer.okta.com/blog/2017/08/17/why-jwts-suck-as-session-tokens">Чем так плох JWT</a> - <em>01:44:56</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast618.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-618.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast618.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/10/06/podcast-618/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/10/06//podcast-618/
+			</guid>
+			<pubDate>
+				Sat, 06 Oct 2018 17:44:05 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt618.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://blog.digitalocean.com/custom-images/">Custom Image теперь и в DigitalOcean</a> - <em>00:13:36</em>.</li>
+				<li><a href="https://techcrunch.com/2018/10/05/scaleway-adds-object-storage/">Scaleway добавила object storage</a> - <em>00:25:05</em>.</li>
+				<li><a href="https://blog.cloudflare.com/introducing-workers-kv/">Workers KV - больше чем KV</a> - <em>00:33:26</em>.</li>
+				<li><a href="https://blog.cloudflare.com/building-with-workers-kv/">Технические детали Workers KV</a> - <em>00:37:58</em>.</li>
+				<li><a href="https://www.androidcentral.com/android-developers-love-kotlin">Kotlin проникает в Google Cloud Platform</a> - <em>00:46:08</em>.</li>
+				<li><a href="https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/">Что не так с конкурентностью в Go</a> - <em>01:06:24</em>.</li>
+				<li><a href="https://eli.thegreenplace.net/2018/go-hits-the-concurrency-nail-right-on-the-head/">Все так с конкурентностью в Go</a> - <em>01:12:38</em>.</li>
+				<li><a href="https://www.lightbluetouchpaper.org/2018/10/05/making-sense-of-the-supermicro-motherboard-attack/">Supermicro motherboard attack</a> - <em>01:32:44</em>.</li>
+				<li><a href="https://developer.okta.com/blog/2017/08/17/why-jwts-suck-as-session-tokens">Чем так плох JWT</a> - <em>01:44:56</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast618.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-618.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast618.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt618.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast618.mp3" type="audio/mp3" length="84847981" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast618.mp3" fileSize="84847981" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 617
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt617.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.apple.com/macos/mojave/">macOS Mojave</a> - <em>00:04:33</em>.</li>
+				<li><a href="https://gizmodo.com/facebook-is-giving-advertisers-access-to-your-shadow-co-1828476051">Facebook сливает через 3х лиц</a> - <em>00:44:58</em>.</li>
+				<li><a href="https://gizmodo.com/50-million-facebook-accounts-affected-in-massive-securi-1829394250">50М пользователей Facebook утекли</a> - <em>00:47:43</em>.</li>
+				<li><a href="https://blog.cloudflare.com/cloudflare-registrar/">Cloudflare Registrar</a> - <em>01:09:10</em>.</li>
+				<li><a href="https://www.geekwire.com/2018/9-biggest-announcements-microsoft-ignite-tech-conference/">Microsoft Ignite</a> - <em>01:18:04</em>.</li>
+				<li><a href="https://www.apple.com/newsroom/2018/09/apple-acquires-shazam-offering-more-ways-to-discover-and-enjoy-music/">Apple приобрел Shazam</a> - <em>01:22:35</em>.</li>
+				<li><a href="https://9to5google.com/2018/09/25/google-chrome-70-fix-changes/">Скандалы вокруг Google и Chrome</a> - <em>01:25:28</em>.</li>
+				<li><a href="https://SkipLang.github.io/index.html">Язык программирования skip</a> - <em>01:34:18</em>.</li>
+				<li><a href="https://venturebeat.com/2018/09/07/tor-gets-its-first-official-mobile-browser/">Tor выпустил мобильный browser</a> - <em>01:35:35</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast617.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-617.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast617.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/09/29/podcast-617/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/09/29//podcast-617/
+			</guid>
+			<pubDate>
+				Sat, 29 Sep 2018 18:04:30 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt617.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.apple.com/macos/mojave/">macOS Mojave</a> - <em>00:04:33</em>.</li>
+				<li><a href="https://gizmodo.com/facebook-is-giving-advertisers-access-to-your-shadow-co-1828476051">Facebook сливает через 3х лиц</a> - <em>00:44:58</em>.</li>
+				<li><a href="https://gizmodo.com/50-million-facebook-accounts-affected-in-massive-securi-1829394250">50М пользователей Facebook утекли</a> - <em>00:47:43</em>.</li>
+				<li><a href="https://blog.cloudflare.com/cloudflare-registrar/">Cloudflare Registrar</a> - <em>01:09:10</em>.</li>
+				<li><a href="https://www.geekwire.com/2018/9-biggest-announcements-microsoft-ignite-tech-conference/">Microsoft Ignite</a> - <em>01:18:04</em>.</li>
+				<li><a href="https://www.apple.com/newsroom/2018/09/apple-acquires-shazam-offering-more-ways-to-discover-and-enjoy-music/">Apple приобрел Shazam</a> - <em>01:22:35</em>.</li>
+				<li><a href="https://9to5google.com/2018/09/25/google-chrome-70-fix-changes/">Скандалы вокруг Google и Chrome</a> - <em>01:25:28</em>.</li>
+				<li><a href="https://SkipLang.github.io/index.html">Язык программирования skip</a> - <em>01:34:18</em>.</li>
+				<li><a href="https://venturebeat.com/2018/09/07/tor-gets-its-first-official-mobile-browser/">Tor выпустил мобильный browser</a> - <em>01:35:35</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast617.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-617.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast617.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt617.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast617.mp3" type="audio/mp3" length="76018070" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast617.mp3" fileSize="76018070" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 616
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt616.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.bloomberg.com/tosv2.html?vid=&amp;uuid=15ef6670-bd59-11e8-bca1-0d901f158ed4&amp;url=L25ld3MvYXJ0aWNsZXMvMjAxOC0wOS0xOS9hbHBoYWJldC1iYWNrcy1naXRsYWItcy1xdWVzdC10by1zdXJwYXNzLW1pY3Jvc29mdC1zLWdpdGh1Yg==">Google вложился в GitLab</a> - <em>00:17:53</em>.</li>
+				<li><a href="https://www.sublimetext.com/blog/articles/sublime-merge">Sublime Merge</a> - <em>00:29:37</em>.</li>
+				<li><a href="https://lkml.org/lkml/2018/9/16/167">Линус заявил странное</a> - <em>00:45:15</em>.</li>
+				<li><a href="https://www.theverge.com/2018/9/20/17883242/amazon-alexa-event-2018-news-recap-echo-auto-dot-sub-link-auto-microwave">Amazon и его бесконечный ряд новинок</a> - <em>01:06:18</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast616.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-616.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast616.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/09/22/podcast-616/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/09/22//podcast-616/
+			</guid>
+			<pubDate>
+				Sat, 22 Sep 2018 18:53:35 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt616.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.bloomberg.com/tosv2.html?vid=&amp;uuid=15ef6670-bd59-11e8-bca1-0d901f158ed4&amp;url=L25ld3MvYXJ0aWNsZXMvMjAxOC0wOS0xOS9hbHBoYWJldC1iYWNrcy1naXRsYWItcy1xdWVzdC10by1zdXJwYXNzLW1pY3Jvc29mdC1zLWdpdGh1Yg==">Google вложился в GitLab</a> - <em>00:17:53</em>.</li>
+				<li><a href="https://www.sublimetext.com/blog/articles/sublime-merge">Sublime Merge</a> - <em>00:29:37</em>.</li>
+				<li><a href="https://lkml.org/lkml/2018/9/16/167">Линус заявил странное</a> - <em>00:45:15</em>.</li>
+				<li><a href="https://www.theverge.com/2018/9/20/17883242/amazon-alexa-event-2018-news-recap-echo-auto-dot-sub-link-auto-microwave">Amazon и его бесконечный ряд новинок</a> - <em>01:06:18</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast616.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-616.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast616.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt616.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast616.mp3" type="audio/mp3" length="99919066" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast616.mp3" fileSize="99919066" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 615
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt615.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://techcrunch.com/2018/09/12/everything-apple-announced-at-its-iphone-xs-event/">Событие от Apple</a>.</li>
+				<li><a href="https://www.theverge.com/2018/9/12/17848500/google-inbox-shut-down-sunset-snooze-email-march-2019">Google закрывает Inbox</a>.</li>
+				<li><a href="https://www.buzzfeednews.com/article/ryanhatesthis/everything-you-need-to-know-about-the-law-european">Новый закон поломает интернет</a>.</li>
+				<li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub Pull Requests для Visual Studio Code</a>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49256">Python избавляется от терминов "master" и "slave"</a>.</li>
+				<li><a href="https://variety.com/2018/digital/news/plex-cloud-shutting-down-1202936840/">Plex уходит из облаков</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast615.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-615.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast615.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/09/15/podcast-615/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/09/15//podcast-615/
+			</guid>
+			<pubDate>
+				Sat, 15 Sep 2018 18:05:24 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt615.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://techcrunch.com/2018/09/12/everything-apple-announced-at-its-iphone-xs-event/">Событие от Apple</a>.</li>
+				<li><a href="https://www.theverge.com/2018/9/12/17848500/google-inbox-shut-down-sunset-snooze-email-march-2019">Google закрывает Inbox</a>.</li>
+				<li><a href="https://www.buzzfeednews.com/article/ryanhatesthis/everything-you-need-to-know-about-the-law-european">Новый закон поломает интернет</a>.</li>
+				<li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub Pull Requests для Visual Studio Code</a>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49256">Python избавляется от терминов "master" и "slave"</a>.</li>
+				<li><a href="https://variety.com/2018/digital/news/plex-cloud-shutting-down-1202936840/">Plex уходит из облаков</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast615.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-615.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast615.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt615.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast615.mp3" type="audio/mp3" length="82621826" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast615.mp3" fileSize="82621826" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 614
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt614.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://cloud.yandex.ru/docs">Яндекс.Облако</a> - <em>00:02:18</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49227">Релиз Chrome 69 с переработанным интерфейсом</a> - <em>00:39:59</em>.</li>
+				<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=881410">"www." пропал из URL</a> - <em>00:55:20</em>.</li>
+				<li><a href="https://threatpost.com/open-git-directories-leave-390k-websites-vulnerable/137299/">Открытые .Git на 390K сайтов</a> - <em>00:55:42</em>.</li>
+				<li><a href="http://www.pewresearch.org/fact-tank/2018/09/05/americans-are-changing-their-relationship-with-facebook/">Facebook уже не тот</a> - <em>01:05:12</em>.</li>
+				<li><a href="https://techcrunch.com/2018/09/04/evernote-lost-its-cto-cfo-cpo-and-hr-head-in-the-last-month-as-it-eyes-another-fundraise/">Evernote потерял всех руководителей</a> - <em>01:25:52</em>.</li>
+				<li><a href="https://habr.com/post/422421/">Microsoft собирается радикально улучшить Skype</a> - <em>01:48:48</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast614.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-614.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast614.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/09/08/podcast-614/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/09/08//podcast-614/
+			</guid>
+			<pubDate>
+				Sat, 08 Sep 2018 18:49:30 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt614.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://cloud.yandex.ru/docs">Яндекс.Облако</a> - <em>00:02:18</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49227">Релиз Chrome 69 с переработанным интерфейсом</a> - <em>00:39:59</em>.</li>
+				<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=881410">"www." пропал из URL</a> - <em>00:55:20</em>.</li>
+				<li><a href="https://threatpost.com/open-git-directories-leave-390k-websites-vulnerable/137299/">Открытые .Git на 390K сайтов</a> - <em>00:55:42</em>.</li>
+				<li><a href="http://www.pewresearch.org/fact-tank/2018/09/05/americans-are-changing-their-relationship-with-facebook/">Facebook уже не тот</a> - <em>01:05:12</em>.</li>
+				<li><a href="https://techcrunch.com/2018/09/04/evernote-lost-its-cto-cfo-cpo-and-hr-head-in-the-last-month-as-it-eyes-another-fundraise/">Evernote потерял всех руководителей</a> - <em>01:25:52</em>.</li>
+				<li><a href="https://habr.com/post/422421/">Microsoft собирается радикально улучшить Skype</a> - <em>01:48:48</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast614.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-614.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast614.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt614.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast614.mp3" type="audio/mp3" length="99536895" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast614.mp3" fileSize="99536895" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 613
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt613.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://aws.amazon.com/about-aws/whats-new/2018/08/introducing-amazon-ec2-t3-instances/?fc=p_2">Amazon EC2 T3</a>.</li>
+				<li><a href="https://techcrunch.com/2018/08/23/aws-cuts-the-price-of-most-of-its-lightsail-virtual-private-servers-in-half/">AWS уронило цену на Lightsail</a>.</li>
+				<li><a href="https://blog.golang.org/go1.11">Go 1.11</a>.</li>
+				<li><a href="https://open.microsoft.com/2018/08/28/announcing-project-athens-gophersource-go-community/">Проект Athens</a>.</li>
+				<li><a href="https://blog.golang.org/go2draft">Go 2 Draft</a>.</li>
+				<li><a href="https://erikbern.com/2018/08/30/i-dont-want-to-learn-your-garbage-query-language.html">Зачем учить еще один DSL</a>.</li>
+				<li><a href="https://medium.com/gitpod/gitpod-gitpod-online-ide-for-github-6296b907a886">Gitpod — странное IDE для GitHub</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast613.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-613.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast613.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/09/01/podcast-613/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/09/01//podcast-613/
+			</guid>
+			<pubDate>
+				Sat, 01 Sep 2018 18:18:27 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt613.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://aws.amazon.com/about-aws/whats-new/2018/08/introducing-amazon-ec2-t3-instances/?fc=p_2">Amazon EC2 T3</a>.</li>
+				<li><a href="https://techcrunch.com/2018/08/23/aws-cuts-the-price-of-most-of-its-lightsail-virtual-private-servers-in-half/">AWS уронило цену на Lightsail</a>.</li>
+				<li><a href="https://blog.golang.org/go1.11">Go 1.11</a>.</li>
+				<li><a href="https://open.microsoft.com/2018/08/28/announcing-project-athens-gophersource-go-community/">Проект Athens</a>.</li>
+				<li><a href="https://blog.golang.org/go2draft">Go 2 Draft</a>.</li>
+				<li><a href="https://erikbern.com/2018/08/30/i-dont-want-to-learn-your-garbage-query-language.html">Зачем учить еще один DSL</a>.</li>
+				<li><a href="https://medium.com/gitpod/gitpod-gitpod-online-ide-for-github-6296b907a886">Gitpod — странное IDE для GitHub</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast613.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-613.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast613.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt613.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast613.mp3" type="audio/mp3" length="84207197" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast613.mp3" fileSize="84207197" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 612
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt612.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.theverge.com/2018/8/20/17725226/skype-private-conversation-end-to-end-encrypted-opt-in">Skype зашифровал беседы</a> - <em>00:02:39</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49171">Intel запретил публиковать результаты тестирования</a> - <em>00:19:58</em>.</li>
+				<li><a href="https://www.reddit.com/r/EnoughMuskSpam/comments/99sbwa/former_tesla_programmers_anecdotes_about_problems/">Бывший работникTesla разговорился</a> - <em>00:28:14</em>.</li>
+				<li><a href="https://venturebeat.com/2018/08/23/you-can-now-download-windows-95-as-an-app-for-mac-windows-and-linux/">Windows 95 для любой OS</a> - <em>00:43:58</em>.</li>
+				<li><a href="https://thenextweb.com/plugged/2018/08/23/logitechs-mx-vertical-is-the-ergonomic-mouse-i-didnt-know-i-wanted/">Logitech’s MX Vertical</a> - <em>00:50:34</em>.</li>
+				<li><a href="https://tech.co/google-pixel-3-xl-leaks-rumors-2018-08">Google Pixel 3 XL</a> - <em>01:00:00</em>.</li>
+				<li><a href="https://www.zdnet.com/pictures/microsoft-surface-go-first-impressions/">Microsoft Surface Go</a> - <em>01:10:37</em>.</li>
+				<li><a href="https://www.independent.co.uk/life-style/gadgets-and-tech/news/google-chrome-incognito-mode-personal-data-private-browser-a8502386.html">Google Chrome и не очень приватный режим</a> - <em>01:18:28</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast612.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-612.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast612.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/08/25/podcast-612/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/08/25//podcast-612/
+			</guid>
+			<pubDate>
+				Sat, 25 Aug 2018 19:30:37 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt612.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.theverge.com/2018/8/20/17725226/skype-private-conversation-end-to-end-encrypted-opt-in">Skype зашифровал беседы</a> - <em>00:02:39</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49171">Intel запретил публиковать результаты тестирования</a> - <em>00:19:58</em>.</li>
+				<li><a href="https://www.reddit.com/r/EnoughMuskSpam/comments/99sbwa/former_tesla_programmers_anecdotes_about_problems/">Бывший работникTesla разговорился</a> - <em>00:28:14</em>.</li>
+				<li><a href="https://venturebeat.com/2018/08/23/you-can-now-download-windows-95-as-an-app-for-mac-windows-and-linux/">Windows 95 для любой OS</a> - <em>00:43:58</em>.</li>
+				<li><a href="https://thenextweb.com/plugged/2018/08/23/logitechs-mx-vertical-is-the-ergonomic-mouse-i-didnt-know-i-wanted/">Logitech’s MX Vertical</a> - <em>00:50:34</em>.</li>
+				<li><a href="https://tech.co/google-pixel-3-xl-leaks-rumors-2018-08">Google Pixel 3 XL</a> - <em>01:00:00</em>.</li>
+				<li><a href="https://www.zdnet.com/pictures/microsoft-surface-go-first-impressions/">Microsoft Surface Go</a> - <em>01:10:37</em>.</li>
+				<li><a href="https://www.independent.co.uk/life-style/gadgets-and-tech/news/google-chrome-incognito-mode-personal-data-private-browser-a8502386.html">Google Chrome и не очень приватный режим</a> - <em>01:18:28</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast612.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-612.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast612.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt612.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast612.mp3" type="audio/mp3" length="73837368" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast612.mp3" fileSize="73837368" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 611
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt611.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.theverge.com/2018/8/17/17715166/google-location-tracking-history-weather-maps">Google признается в страшном</a> - <em>00:01:43</em>.</li>
+				<li><a href="https://www.engadget.com/2018/08/17/how-google-location-tracking-issue-affects-you/">Чем эта слежка нам грозит</a> - <em>00:10:53</em>.</li>
+				<li><a href="https://www.cultofmac.com/570095/google-makes-big-improvements-to-gmail-google-voice-on-ios/">Улучшения в Gmail и Google Voice для iOS</a> - <em>00:28:13</em>.</li>
+				<li><a href="https://techcrunch.com/2018/08/17/the-automatica-automates-pour-over-coffee-in-a-charming-and-totally-unnecessary-way/">Стимппанк от Automatica</a> - <em>00:35:17</em>.</li>
+				<li><a href="https://github.com/Microsoft/FASTER">FASTER - встраиваемый KV от MS</a> - <em>00:50:22</em>.</li>
+				<li><a href="https://zeit.co/blog/serverless-docker">Serverless Docker</a> - <em>00:59:15</em>.</li>
+				<li><a href="https://www.engadget.com/2018/08/16/asus-zenbook-pro-15-review/">ZenBook Pro 15</a> - <em>01:20:13</em>.</li>
+				<li><a href="https://www.theverge.com/circuitbreaker/2018/8/17/17723464/amazon-live-tv-recording-fire-tv-device">Amazon выходит на рынок DVR</a> - <em>01:30:05</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast611.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-611.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast611.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/08/18/podcast-611/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/08/18//podcast-611/
+			</guid>
+			<pubDate>
+				Sat, 18 Aug 2018 18:09:02 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt611.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://www.theverge.com/2018/8/17/17715166/google-location-tracking-history-weather-maps">Google признается в страшном</a> - <em>00:01:43</em>.</li>
+				<li><a href="https://www.engadget.com/2018/08/17/how-google-location-tracking-issue-affects-you/">Чем эта слежка нам грозит</a> - <em>00:10:53</em>.</li>
+				<li><a href="https://www.cultofmac.com/570095/google-makes-big-improvements-to-gmail-google-voice-on-ios/">Улучшения в Gmail и Google Voice для iOS</a> - <em>00:28:13</em>.</li>
+				<li><a href="https://techcrunch.com/2018/08/17/the-automatica-automates-pour-over-coffee-in-a-charming-and-totally-unnecessary-way/">Стимппанк от Automatica</a> - <em>00:35:17</em>.</li>
+				<li><a href="https://github.com/Microsoft/FASTER">FASTER - встраиваемый KV от MS</a> - <em>00:50:22</em>.</li>
+				<li><a href="https://zeit.co/blog/serverless-docker">Serverless Docker</a> - <em>00:59:15</em>.</li>
+				<li><a href="https://www.engadget.com/2018/08/16/asus-zenbook-pro-15-review/">ZenBook Pro 15</a> - <em>01:20:13</em>.</li>
+				<li><a href="https://www.theverge.com/circuitbreaker/2018/8/17/17723464/amazon-live-tv-recording-fire-tv-device">Amazon выходит на рынок DVR</a> - <em>01:30:05</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast611.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-611.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast611.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt611.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast611.mp3" type="audio/mp3" length="89446054" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast611.mp3" fileSize="89446054" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 610
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt610.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://thenextweb.com/security/2018/08/07/hacker-swipes-snapchats-source-code-publishes-it-on-github/">Утечка Snapchat</a> - <em>00:02:24</em>.</li>
+				<li><a href="https://sdtimes.com/cloud/amazon-aurora-serverless-now-generally-available/">Amazon Aurora Serverless</a> - <em>00:19:28</em>.</li>
+				<li><a href="https://techcrunch.com/2018/08/07/microsoft-decides-to-support-skype-classic-for-some-time-after-users-revolt/">Microsoft отступила в Skype Classic</a> - <em>00:33:18</em>.</li>
+				<li><a href="https://letsencrypt.org/2018/08/06/trusted-by-all-major-root-programs.html">Let's Encrypt теперь доверяют все</a> - <em>00:43:40</em>.</li>
+				<li><a href="https://githubengineering.com/glb-director-open-source-load-balancer/">GLB от GitHub</a> - <em>01:05:37</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49096">Выпуск Dart 2.0</a> - <em>01:12:31</em>.</li>
+				<li><a href="https://mashable.com/2018/08/06/facebook-financial-info-banks/">Facebook охотится на банки</a> - <em>01:23:58</em>.</li>
+				<li><a href="https://torrentfreak.com/the-pirate-bay-turns-15-years-old-180810/">The Pirate Bay Turns 15 Years Old - TorrentFreak</a> - <em>01:32:20</em>.</li>
+				<li><a href="https://julialang.org/blog/2018/08/one-point-zero">Julia 1.0</a> - <em>01:40:59</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast610.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-610.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast610.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/08/11/podcast-610/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/08/11//podcast-610/
+			</guid>
+			<pubDate>
+				Sat, 11 Aug 2018 18:37:37 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt610.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://thenextweb.com/security/2018/08/07/hacker-swipes-snapchats-source-code-publishes-it-on-github/">Утечка Snapchat</a> - <em>00:02:24</em>.</li>
+				<li><a href="https://sdtimes.com/cloud/amazon-aurora-serverless-now-generally-available/">Amazon Aurora Serverless</a> - <em>00:19:28</em>.</li>
+				<li><a href="https://techcrunch.com/2018/08/07/microsoft-decides-to-support-skype-classic-for-some-time-after-users-revolt/">Microsoft отступила в Skype Classic</a> - <em>00:33:18</em>.</li>
+				<li><a href="https://letsencrypt.org/2018/08/06/trusted-by-all-major-root-programs.html">Let's Encrypt теперь доверяют все</a> - <em>00:43:40</em>.</li>
+				<li><a href="https://githubengineering.com/glb-director-open-source-load-balancer/">GLB от GitHub</a> - <em>01:05:37</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=49096">Выпуск Dart 2.0</a> - <em>01:12:31</em>.</li>
+				<li><a href="https://mashable.com/2018/08/06/facebook-financial-info-banks/">Facebook охотится на банки</a> - <em>01:23:58</em>.</li>
+				<li><a href="https://torrentfreak.com/the-pirate-bay-turns-15-years-old-180810/">The Pirate Bay Turns 15 Years Old - TorrentFreak</a> - <em>01:32:20</em>.</li>
+				<li><a href="https://julialang.org/blog/2018/08/one-point-zero">Julia 1.0</a> - <em>01:40:59</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast610.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-610.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast610.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt610.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast610.mp3" type="audio/mp3" length="90769679" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast610.mp3" fileSize="90769679" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 609
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt609.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://dev.to/powerwebdev/an-introduction-to-the-concept-of-design-patterns-o29">Разговоры про шаблоны проектирования</a> - <em>00:10:33</em>.</li>
+				<li><a href="https://brandur.org/interfaces">Чему нас учит терминал</a> - <em>00:33:59</em>.</li>
+				<li><a href="https://sdtimes.com/java/apache-netbeans-incubating-9-0-is-now-available/">Apache NetBeans 9.0</a> - <em>00:53:50</em>.</li>
+				<li><a href="https://blog.plaid.com/building-an-inclusive-code-review-culture/">Проводим Code Review культурно</a> - <em>01:04:25</em>.</li>
+				<li><a href="https://github.com/grumpyhome/grumpy/blob/master/README.md">Grumpy - из питона в Go </a> - <em>01:41:04</em>.</li>
+				<li><a href="https://blog.golang.org/go-cloud">Go Cloud</a> - <em>01:45:06</em>.</li>
+				<li><a href="https://blog.bitbucket.org/2018/07/19/13-new-bitbucket-cloud-features/">Обновления Bitbucket</a> - <em>01:49:40</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast609.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-609.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast609.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/08/04/podcast-609/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/08/04//podcast-609/
+			</guid>
+			<pubDate>
+				Sat, 04 Aug 2018 19:14:14 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt609.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://dev.to/powerwebdev/an-introduction-to-the-concept-of-design-patterns-o29">Разговоры про шаблоны проектирования</a> - <em>00:10:33</em>.</li>
+				<li><a href="https://brandur.org/interfaces">Чему нас учит терминал</a> - <em>00:33:59</em>.</li>
+				<li><a href="https://sdtimes.com/java/apache-netbeans-incubating-9-0-is-now-available/">Apache NetBeans 9.0</a> - <em>00:53:50</em>.</li>
+				<li><a href="https://blog.plaid.com/building-an-inclusive-code-review-culture/">Проводим Code Review культурно</a> - <em>01:04:25</em>.</li>
+				<li><a href="https://github.com/grumpyhome/grumpy/blob/master/README.md">Grumpy - из питона в Go </a> - <em>01:41:04</em>.</li>
+				<li><a href="https://blog.golang.org/go-cloud">Go Cloud</a> - <em>01:45:06</em>.</li>
+				<li><a href="https://blog.bitbucket.org/2018/07/19/13-new-bitbucket-cloud-features/">Обновления Bitbucket</a> - <em>01:49:40</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast609.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-609.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast609.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt609.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast609.mp3" type="audio/mp3" length="103882887" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast609.mp3" fileSize="103882887" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 608
+			</title>
+			<description>
+				<![CDATA[
+				<ul>
+				<li><a href="https://www.atlassian.com/blog/announcements/new-atlassian-slack-partnership">Конец hipcat</a></li>
+				<li><a href="https://zapier.com/blog/slack-versus-hipchat/">Почему Slack захватил рынок</a>.</li>
+				<li><a href="https://telegram.org/blog/passport">Telegram Passport</a>.</li>
+				<li><a href="https://www.digitaltrends.com/computing/google-titan-security-key-eliminates-passwords/">USB токен от Google</a>.</li>
+				<li><a href="https://www.scientificamerican.com/article/23andme-is-sharing-genetic-data-with-drug-giant/">23andMe нашел себе подозрительных друзей</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast608.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-608.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast608.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/07/28/podcast-608/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/07/28//podcast-608/
+			</guid>
+			<pubDate>
+				Sat, 28 Jul 2018 22:30:06 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<ul>
+				<li><a href="https://www.atlassian.com/blog/announcements/new-atlassian-slack-partnership">Конец hipcat</a></li>
+				<li><a href="https://zapier.com/blog/slack-versus-hipchat/">Почему Slack захватил рынок</a>.</li>
+				<li><a href="https://telegram.org/blog/passport">Telegram Passport</a>.</li>
+				<li><a href="https://www.digitaltrends.com/computing/google-titan-security-key-eliminates-passwords/">USB токен от Google</a>.</li>
+				<li><a href="https://www.scientificamerican.com/article/23andme-is-sharing-genetic-data-with-drug-giant/">23andMe нашел себе подозрительных друзей</a>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast608.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-608.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast608.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt608.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast608.mp3" type="audio/mp3" length="114907584" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast608.mp3" fileSize="114907584" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 607
+			</title>
+			<description>
+				<![CDATA[
+				<ul>
+				<li><a href="https://www.inverse.com/article/47169-macbook-pro-2018-throttling-complaints-reddit">MacBook Pro 2018 неприятно удивил</a></li>
+				<li><a href="http://europa.eu/rapid/press-release_IP-18-4581_en.htm">Google наказывают за все хорошее</a></li>
+				<li><a href="https://mashable.com/2018/07/18/corning-gorilla-glass-6-textured-glass/">Телефон из стекла</a></li>
+				<li><a href="https://quariety.com/2018/07/20/peertube-the-decentralized-youtube-succeeds-in-crowdfunding/">PeerTube собрал немного денег на убийство YouTube</a></li>
+				<li><a href="https://thenextweb.com/insider/2018/07/18/walmart-is-reportedly-building-a-video-streaming-service-to-take-on-netflix/">Walmart тоже хочет быть видео сервисом</a></li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast607.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-607.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast607.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/07/22/podcast-607/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/07/22//podcast-607/
+			</guid>
+			<pubDate>
+				Sun, 22 Jul 2018 00:09:00 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<ul>
+				<li><a href="https://www.inverse.com/article/47169-macbook-pro-2018-throttling-complaints-reddit">MacBook Pro 2018 неприятно удивил</a></li>
+				<li><a href="http://europa.eu/rapid/press-release_IP-18-4581_en.htm">Google наказывают за все хорошее</a></li>
+				<li><a href="https://mashable.com/2018/07/18/corning-gorilla-glass-6-textured-glass/">Телефон из стекла</a></li>
+				<li><a href="https://quariety.com/2018/07/20/peertube-the-decentralized-youtube-succeeds-in-crowdfunding/">PeerTube собрал немного денег на убийство YouTube</a></li>
+				<li><a href="https://thenextweb.com/insider/2018/07/18/walmart-is-reportedly-building-a-video-streaming-service-to-take-on-netflix/">Walmart тоже хочет быть видео сервисом</a></li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast607.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-607.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast607.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt607.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast607.mp3" type="audio/mp3" length="66279099" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast607.mp3" fileSize="66279099" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<item>
+			<title>
+				Радио-Т 606
+			</title>
+			<description>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt606.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://techcrunch.com/2018/07/12/apples-macbook-refresh-puts-the-focus-back-on-creative-pros/">Новые MacBook Pro не совсем то, что ожидали</a> - <em>00:02:16</em>.</li>
+				<li><a href="https://www.theverge.com/2018/7/12/17563640/apple-macbook-pro-touchbar-2018-intel-processor-siri-true-tone">Клавиатура тише, процессоры шустрее</a> - <em>00:18:33</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=48959">Гвидо ван Россум решил отстраниться</a> - <em>00:30:22</em>.</li>
+				<li><a href="https://techcrunch.com/2018/07/12/microsoft-teams-gets-a-free-version/">Microsoft Teams доступна в бесплатном варианте</a> - <em>01:00:06</em>.</li>
+				<li><a href="https://gizmodo.com/twitter-is-suspending-more-than-one-million-accounts-pe-1827409235">Twitter удалят спамеров миллионами</a> - <em>01:07:58</em>.</li>
+				<li><a href="https://blog.ubuntu.com/2018/07/09/minimal-ubuntu-released">Minimal Ubuntu не так уж и мала</a> - <em>01:19:27</em>.</li>
+				<li><a href="https://bgr.com/2018/07/10/apple-1password-acquisition-deal/amp/">Apple купил много 1Password, но может купить еще больше</a> - <em>01:30:16</em>.</li>
+				<li><a href="http://blog.memsql.com/nosql/">Прощай, NoSQL. Твое время ушло</a> - <em>01:36:56</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast606.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-606.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast606.mp3" preload="none"></audio>
+				]]>
+			</description>
+			<link>
+				https://radio-t.com/p/2018/07/14/podcast-606/
+			</link>
+			<guid>
+				https://radio-t.com/p/2018/07/14//podcast-606/
+			</guid>
+			<pubDate>
+				Sat, 14 Jul 2018 18:17:43 EST
+			</pubDate>
+			<author>
+				Umputun, Bobuk, Gray, Ksenks
+			</author>
+			<summary>
+				<![CDATA[
+				<p><img src="https://radio-t.com/images/radio-t/rt606.jpg" alt=""></p>
+				<ul>
+				<li><a href="https://techcrunch.com/2018/07/12/apples-macbook-refresh-puts-the-focus-back-on-creative-pros/">Новые MacBook Pro не совсем то, что ожидали</a> - <em>00:02:16</em>.</li>
+				<li><a href="https://www.theverge.com/2018/7/12/17563640/apple-macbook-pro-touchbar-2018-intel-processor-siri-true-tone">Клавиатура тише, процессоры шустрее</a> - <em>00:18:33</em>.</li>
+				<li><a href="http://www.opennet.ru/opennews/art.shtml?num=48959">Гвидо ван Россум решил отстраниться</a> - <em>00:30:22</em>.</li>
+				<li><a href="https://techcrunch.com/2018/07/12/microsoft-teams-gets-a-free-version/">Microsoft Teams доступна в бесплатном варианте</a> - <em>01:00:06</em>.</li>
+				<li><a href="https://gizmodo.com/twitter-is-suspending-more-than-one-million-accounts-pe-1827409235">Twitter удалят спамеров миллионами</a> - <em>01:07:58</em>.</li>
+				<li><a href="https://blog.ubuntu.com/2018/07/09/minimal-ubuntu-released">Minimal Ubuntu не так уж и мала</a> - <em>01:19:27</em>.</li>
+				<li><a href="https://bgr.com/2018/07/10/apple-1password-acquisition-deal/amp/">Apple купил много 1Password, но может купить еще больше</a> - <em>01:30:16</em>.</li>
+				<li><a href="http://blog.memsql.com/nosql/">Прощай, NoSQL. Твое время ушло</a> - <em>01:36:56</em>.</li>
+				<li>Темы наших слушателей</li>
+				</ul>
+				<p><em>Спонсор этого выпуска <a href="https://www.digitalocean.com">DigitalOcean</a></em></p>
+				<p><a href="http://cdn.radio-t.com/rt_podcast606.mp3">аудио</a> ● <a href="http://chat.radio-t.com/logs/radio-t-606.html">лог чата</a></p>
+				<audio src="http://cdn.radio-t.com/rt_podcast606.mp3" preload="none"></audio>
+				]]>
+			</summary>
+			<image href="https://radio-t.com/images/radio-t/rt606.jpg" />
+			<enclosure url="http://cdn.radio-t.com/rt_podcast606.mp3" type="audio/mp3" length="88343426" />
+			<author>
+				podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)
+			</author>
+			<content url="http://cdn.radio-t.com/rt_podcast606.mp3" fileSize="88343426" type="audio/mp3" />
+			<explicit>
+				no
+			</explicit>
+			<subtitle>
+				Подкаст выходного дня - импровизации на темы высоких технологий
+			</subtitle>
+			<keywords>
+				hitech,russian,radiot,tech,news,радио
+			</keywords>
+		</item>
+		<credit role="author">
+			Umputun, Bobuk, Gray, Ksenks
+		</credit>
+		<rating>
+			nonadult
+		</rating>
+		<description type="plain">
+			Еженедельные импровизации на хай–тек темы
+		</description>
+	</channel>
+</rss>
