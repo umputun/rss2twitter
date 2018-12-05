@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"text/template"
 	"time"
 
-	"github.com/alecthomas/template"
 	"github.com/umputun/rss2twitter/app/publisher"
 
 	"github.com/hashicorp/logutils"
