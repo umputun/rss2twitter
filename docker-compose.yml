@@ -15,8 +15,9 @@ services:
         max-file: "5"
 
     environment:
-      - FEED=http://lorem-rss.herokuapp.com/feed?unit=second&interval=10
-      - CONSUMER_KEY
-      - CONSUMER_SECRET
-      - ACCESS_TOKEN
-      - ACCESS_SECRET
+      - FEED=http://lorem-rss.herokuapp.com/feed?unit=second&interval=30
+      - REFRESH=1m
+      - TWI_CONSUMER_KEY
+      - TWI_CONSUMER_SECRET
+      - TWI_ACCESS_TOKEN
+      - TWI_ACCESS_SECRET
