@@ -2,8 +2,8 @@
 
 The service publishes RSS updates to twitter. The reason is simple - I needed self-hosted thingy to post twits on feed change
 for my sites (podcasts and blogs). Tried several "cloud services" for this and lately switched to IFTTT. It worked, but slow and unreliable. Sometimes it took hours to get twit posted, sometimes I had to trigger it manually. In addition IFTTT can't have multiple
-twitter accounts defined for the same IFTTT account and I had to deal with multiple IFTTT accouts just to post to different twitter's 
-timelines.
+twitter accounts defined for the same IFTTT account and I had to deal with multiple IFTTT accounts just to post 
+to different twitter's timelines.
 
 ## Install
 
