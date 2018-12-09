@@ -3,7 +3,8 @@ version: '2'
 services:
 
   rss2twitter:
-    image: rss2twitter:latest
+    build: .
+    image: umputun/rss2twitter:latest
     container_name: rss2twitter
     hostname: rss2twitter
     restart: always
