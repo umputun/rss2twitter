@@ -31,8 +31,7 @@ RUN mkdir -p target && /script/coverage.sh
 # submit coverage to coverals if COVERALLS_TOKEN in env
 RUN if [ -z "$COVERALLS_TOKEN" ] ; then \
     echo "coverall not enabled" ; \
-    else goveralls -coverprofile=.cover/cover.out -service=travis-ci -repotoken $COVERALLS_TOKEN || echo "coverall failed!"; fi && \
-    cat .cover/cover.out
+    else goveralls -coverprofile=.cover/cover.out -service=travis-ci -repotoken $COVERALLS_TOKEN || echo "coverall failed!"; fi
 
 RUN \
     if [ -z "$TRAVIS" ] ; then \

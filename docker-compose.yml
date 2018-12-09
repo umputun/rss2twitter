@@ -3,9 +3,9 @@ version: '2'
 services:
 
   rss2twitter:
-    image: umputun/rss2twitter:latest
-    container_name: nginx
-    hostname: nginx
+    image: rss2twitter:latest
+    container_name: rss2twitter
+    hostname: rss2twitter
     restart: always
 
     logging: &default_logging
@@ -21,3 +21,5 @@ services:
       - TWI_CONSUMER_SECRET
       - TWI_ACCESS_TOKEN
       - TWI_ACCESS_SECRET
+      - "TEMPLATE={{.Title}} - {{.Link}} #mytag"
+    command: ["/srv/rss2twitter", "--dry"]

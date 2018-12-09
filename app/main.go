@@ -54,7 +54,7 @@ func main() {
 		log.Print("[INFO] dry mode")
 	}
 
-	log.Printf("[INFO] message template %q", opts.Template)
+	log.Printf("[INFO] message template - %q", opts.Template)
 
 	for event := range notifier.Go(context.Background()) {
 		err := pub.Publish(event, func(r rss.Event) string {
