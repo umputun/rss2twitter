@@ -18,7 +18,7 @@ import (
 
 var opts struct {
 	Refresh time.Duration `short:"r" long:"refresh" env:"REFRESH" default:"30s" description:"refresh interval"`
-	TimeOut time.Duration `short:"t" long:"timeout" env:"TIMEOUT" default:"5s" description:"twitter timeout"`
+	TimeOut time.Duration `short:"t" long:"timeout" env:"TIMEOUT" default:"5s" description:"rss feed timeout"`
 	Feed    string        `short:"f" long:"feed" env:"FEED" required:"true" description:"rss feed url"`
 
 	ConsumerKey    string `long:"consumer-key" env:"TWI_CONSUMER_KEY" required:"true" description:"twitter consumer key"`

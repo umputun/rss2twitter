@@ -14,7 +14,7 @@ Use provided `docker-compose.yml` and change `FEED` value. All twiter-api creden
 ```
 Application Options:
   -r, --refresh=         refresh interval (default: 30s) [$REFRESH]
-  -t, --timeout=         twitter timeout (default: 5s) [$TIMEOUT]
+  -t, --timeout=         rss feed timeout (default: 5s) [$TIMEOUT]
   -f, --feed=            rss feed url [$FEED]
       --consumer-key=    twitter consumer key [$TWI_CONSUMER_KEY]
       --consumer-secret= twitter consumer secret [$TWI_CONSUMER_SECRET]
