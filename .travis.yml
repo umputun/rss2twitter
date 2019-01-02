@@ -1,20 +1,19 @@
-install:
-- docker --version
-- docker-compose --version
+language: go
+
+go:
+  - "1.11.x"
+
+go_import_path: github.com/umputun/rss2twitter
+
+install: true
+
+before_install:
+  - export TZ=America/Chicago
+  - curl -L https://git.io/vp6lP | sh
+  - go get github.com/mattn/goveralls
+  - export PATH=$(pwd)/bin:$PATH
 
 script:
-- docker build
-  --build-arg COVERALLS_TOKEN=$COVERALLS_TOKEN
-  --build-arg CI=$CI
-  --build-arg TRAVIS=$TRAVIS
-  --build-arg TRAVIS_BRANCH=$TRAVIS_BRANCH
-  --build-arg TRAVIS_COMMIT=$TRAVIS_COMMIT
-  --build-arg TRAVIS_JOB_ID=$TRAVIS_JOB_ID
-  --build-arg TRAVIS_JOB_NUMBER=$TRAVIS_JOB_NUMBER
-  --build-arg TRAVIS_OS_NAME=$TRAVIS_OS_NAME
-  --build-arg TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST
-  --build-arg TRAVIS_PULL_REQUEST_SHA=$TRAVIS_PULL_REQUEST_SHA
-  --build-arg TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG
-  --build-arg TRAVIS_TAG=$TRAVIS_TAG
-  --build-arg TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
-  .
+  - go test  -v -mod=vendor -covermode=count -coverprofile=profile.cov ./... || travis_terminate 1;
+  - ./bin/gometalinter --deadline=120s --exclude=test --exclude=mock --exclude=vendor --exclude=_example --disable-all --enable=errcheck --enable=vet --enable=vetshadow --enable=megacheck --enable=ineffassign --enable=varcheck --enable=unconvert --enable=deadcode --enable=interfacer --enable=gotype ./... || travis_terminate 1;
+  - $GOPATH/bin/goveralls -coverprofile=profile.cov -service=travis-ci
