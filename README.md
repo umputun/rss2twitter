@@ -7,7 +7,7 @@ to different twitter's timelines.
 
 ## Install
 
-Use provided `docker-compose.yml` and change `FEED` value. All twiter-api credentials can be retrieved from https://developer.twitter.com/en/apps and should be set in environment or directly in the compose file.
+Use provided `docker-compose.yml` and change `FEED` value. All twitter-api credentials can be retrieved from https://developer.twitter.com/en/apps and should be set in environment or directly in the compose file.
 
 ## Parameters
 
