@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-errors/errors"
 	log "github.com/go-pkgz/lgr"
 	"github.com/mmcdole/gofeed"
+	"github.com/pkg/errors"
 )
 
 // Notify on RSS change
