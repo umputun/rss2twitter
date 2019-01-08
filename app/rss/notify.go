@@ -2,7 +2,6 @@ package rss
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"sync"
 	"time"
@@ -56,7 +55,7 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 
 		fp := gofeed.NewParser()
 		fp.Client = &http.Client{Timeout: n.Timeout}
-		fmt.Printf("[DEBUG] notifier uses http timeout %v", n.Timeout)
+		log.Printf("[DEBUG] notifier uses http timeout %v", n.Timeout)
 		lastGUID := ""
 		for {
 			feedData, err := fp.ParseURL(n.Feed)

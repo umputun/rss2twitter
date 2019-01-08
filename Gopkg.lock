@@ -74,12 +74,12 @@
   revision = "bca2e7f09a178fd36b034107a00e2323bca6a82e"
 
 [[projects]]
-  digest = "1:a1a91f2decda4ce3dcca272e9f9bdd3eaba137b5d1acf3d6f1d14c2bd03cb290"
+  digest = "1:ee347ed56b707ed5abde5e9384cc5de6adc1b0830ccde6c23e41625dea2dfc49"
   name = "github.com/go-pkgz/lgr"
   packages = ["."]
   pruneopts = "UT"
-  revision = "e8e3322ba46888900f89c1bbe7c4ae8f5a895aa5"
-  version = "v0.1.4"
+  revision = "26c07b03c78d9a2729d945efac58606901df399d"
+  version = "v0.1.5"
 
 [[projects]]
   digest = "1:a2cff208d4759f6ba1b1cd228587b0a1869f95f22542ec9cd17fff64430113c7"
