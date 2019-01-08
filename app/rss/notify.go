@@ -2,6 +2,7 @@ package rss
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 	"sync"
 	"time"
@@ -55,11 +56,12 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 
 		fp := gofeed.NewParser()
 		fp.Client = &http.Client{Timeout: n.Timeout}
+		fmt.Printf("[DEBUG] notifier uses http timeout %v", n.Timeout)
 		lastGUID := ""
 		for {
 			feedData, err := fp.ParseURL(n.Feed)
 			if err != nil {
-				log.Printf("[WARN] failed to fetch from %s, %v", n.Feed, err)
+				log.Printf("[WARN] failed to fetch/parse url from %s, %v", n.Feed, err)
 				if !waitOrCancel(n.ctx) {
 					return
 				}
@@ -70,10 +72,13 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 				if lastGUID != "" { // don't notify on initial change
 					log.Printf("[INFO] new event %s - %s", event.guid, event.Title)
 					ch <- event
+				} else {
+					log.Printf("[INFO] ignore first event %s - %s", event.guid, event.Title)
 				}
 				lastGUID = event.guid
 			}
 			if !waitOrCancel(n.ctx) {
+				log.Print("[WARN] notifier canceled")
 				return
 			}
 		}
@@ -84,6 +89,7 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 
 // Shutdown notifier
 func (n *Notify) Shutdown() {
+	log.Print("[DEBUG] shutdown initiated")
 	n.cancel()
 	<-n.ctx.Done()
 }
