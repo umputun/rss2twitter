@@ -6,6 +6,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/go-errors/errors"
 	log "github.com/go-pkgz/lgr"
 	"github.com/mmcdole/gofeed"
 )
@@ -66,8 +67,8 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 				}
 				continue
 			}
-			event := n.feedEvent(feedData)
-			if lastGUID != event.guid {
+			event, err := n.feedEvent(feedData)
+			if lastGUID != event.guid && err == nil {
 				if lastGUID != "" { // don't notify on initial change
 					log.Printf("[INFO] new event %s - %s", event.guid, event.Title)
 					ch <- event
@@ -94,12 +95,18 @@ func (n *Notify) Shutdown() {
 }
 
 // feedEvent gets latest item from rss feed
-func (n *Notify) feedEvent(feed *gofeed.Feed) (e Event) {
-	e.ChanTitle = feed.Title
-	if len(feed.Items) > 0 {
-		e.Title = feed.Items[0].Title
-		e.Link = feed.Items[0].Link
-		e.guid = feed.Items[0].GUID
+func (n *Notify) feedEvent(feed *gofeed.Feed) (e Event, err error) {
+	if len(feed.Items) == 0 {
+		return e, errors.New("no items in rss feed")
 	}
-	return e
+	if feed.Items[0].GUID == "" {
+		return e, errors.Errorf("no guid for rss entry %+v", feed.Items[0])
+	}
+
+	e.ChanTitle = feed.Title
+	e.Title = feed.Items[0].Title
+	e.Link = feed.Items[0].Link
+	e.guid = feed.Items[0].GUID
+
+	return e, nil
 }
