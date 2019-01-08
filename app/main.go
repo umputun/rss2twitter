@@ -4,13 +4,15 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"log"
 	"os"
+	"os/signal"
+	"runtime"
+	"syscall"
 	"text/template"
 	"time"
 
-	"github.com/hashicorp/logutils"
-	"github.com/jessevdk/go-flags"
+	log "github.com/go-pkgz/lgr"
+	flags "github.com/jessevdk/go-flags"
 
 	"github.com/umputun/rss2twitter/app/publisher"
 	"github.com/umputun/rss2twitter/app/rss"
@@ -39,7 +41,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	setupLog(opts.Dbg)
+	if opts.Dbg {
+		log.Setup(log.Debug)
+	}
 
 	notifier := rss.Notify{Feed: opts.Feed, Duration: opts.Refresh, Timeout: opts.TimeOut}
 	var pub publisher.Interface = publisher.Twitter{
@@ -56,10 +60,12 @@ func main() {
 
 	log.Printf("[INFO] message template - %q", opts.Template)
 
-	for event := range notifier.Go(context.Background()) {
+	ch := notifier.Go(context.Background())
+	for event := range ch {
 		err := pub.Publish(event, func(r rss.Event) string {
 			b1 := bytes.Buffer{}
 			if err := template.Must(template.New("twi").Parse(opts.Template)).Execute(&b1, event); err != nil {
+				// template failed to parse record, backup predefined format
 				return fmt.Sprintf("%s - %s", r.Title, r.Link)
 			}
 			return b1.String()
@@ -71,18 +77,24 @@ func main() {
 	log.Print("[INFO] terminated")
 }
 
-func setupLog(dbg bool) {
-	filter := &logutils.LevelFilter{
-		Levels:   []logutils.LogLevel{"DEBUG", "INFO", "WARN", "ERROR"},
-		MinLevel: logutils.LogLevel("INFO"),
-		Writer:   os.Stdout,
+// getDump reads runtime stack and returns as a string
+func getDump() string {
+	maxSize := 5 * 1024 * 1024
+	stacktrace := make([]byte, maxSize)
+	length := runtime.Stack(stacktrace, true)
+	if length > maxSize {
+		length = maxSize
 	}
+	return string(stacktrace[:length])
+}
 
-	log.SetFlags(log.Ldate | log.Ltime)
-
-	if dbg {
-		log.SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds | log.Lshortfile)
-		filter.MinLevel = logutils.LogLevel("DEBUG")
-	}
-	log.SetOutput(filter)
+func init() {
+	// catch SIGQUIT and print stack traces
+	sigChan := make(chan os.Signal)
+	go func() {
+		for range sigChan {
+			log.Printf("[INFO] SIGQUIT detected, dump:\n%s", getDump())
+		}
+	}()
+	signal.Notify(sigChan, syscall.SIGQUIT)
 }

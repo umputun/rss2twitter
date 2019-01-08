@@ -74,12 +74,12 @@
   revision = "bca2e7f09a178fd36b034107a00e2323bca6a82e"
 
 [[projects]]
-  digest = "1:16ae35b3a854c667baaf55ff5d455c486f7c2baf040a2727f2ef0e4b096b2a95"
-  name = "github.com/hashicorp/logutils"
+  digest = "1:a1a91f2decda4ce3dcca272e9f9bdd3eaba137b5d1acf3d6f1d14c2bd03cb290"
+  name = "github.com/go-pkgz/lgr"
   packages = ["."]
   pruneopts = "UT"
-  revision = "a335183dfd075f638afcc820c90591ca3c97eba6"
-  version = "v1.0.0"
+  revision = "e8e3322ba46888900f89c1bbe7c4ae8f5a895aa5"
+  version = "v0.1.4"
 
 [[projects]]
   digest = "1:a2cff208d4759f6ba1b1cd228587b0a1869f95f22542ec9cd17fff64430113c7"
@@ -174,7 +174,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/ChimeraCoder/anaconda",
-    "github.com/hashicorp/logutils",
+    "github.com/go-pkgz/lgr",
     "github.com/jessevdk/go-flags",
     "github.com/mmcdole/gofeed",
     "github.com/stretchr/testify/assert",

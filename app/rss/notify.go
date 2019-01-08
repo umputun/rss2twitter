@@ -2,11 +2,11 @@ package rss
 
 import (
 	"context"
-	"log"
 	"net/http"
 	"sync"
 	"time"
 
+	log "github.com/go-pkgz/lgr"
 	"github.com/mmcdole/gofeed"
 )
 
@@ -59,7 +59,7 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 		for {
 			feedData, err := fp.ParseURL(n.Feed)
 			if err != nil {
-				log.Printf("[WARN] failed to fetch from %s, %s", n.Feed, err)
+				log.Printf("[WARN] failed to fetch from %s, %v", n.Feed, err)
 				if !waitOrCancel(n.ctx) {
 					return
 				}
@@ -68,7 +68,7 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 			event := n.feedEvent(feedData)
 			if lastGUID != event.guid {
 				if lastGUID != "" { // don't notify on initial change
-					log.Printf("[DEBUG] new event %s", event.guid)
+					log.Printf("[INFO] new event %s - %s", event.guid, event.Title)
 					ch <- event
 				}
 				lastGUID = event.guid
@@ -88,6 +88,7 @@ func (n *Notify) Shutdown() {
 	<-n.ctx.Done()
 }
 
+// feedEvent gets latest item from rss feed
 func (n *Notify) feedEvent(feed *gofeed.Feed) (e Event) {
 	e.ChanTitle = feed.Title
 	if len(feed.Items) > 0 {
