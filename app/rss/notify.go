@@ -56,7 +56,7 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 		fp := gofeed.NewParser()
 		fp.Client = &http.Client{Timeout: n.Timeout}
 		log.Printf("[DEBUG] notifier uses http timeout %v", n.Timeout)
-		emptyEvent, lastEvent := Event{}, Event{}
+		lastGUID := ""
 		for {
 			feedData, err := fp.ParseURL(n.Feed)
 			if err != nil {
@@ -67,14 +67,14 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 				continue
 			}
 			event := n.feedEvent(feedData)
-			if lastEvent != event {
-				if lastEvent != emptyEvent { // don't notify on initial change
+			if lastGUID != event.guid {
+				if lastGUID != "" { // don't notify on initial change
 					log.Printf("[INFO] new event %s - %s", event.guid, event.Title)
 					ch <- event
 				} else {
 					log.Printf("[INFO] ignore first event %s - %s", event.guid, event.Title)
 				}
-				lastEvent = event
+				lastGUID = event.guid
 			}
 			if !waitOrCancel(n.ctx) {
 				log.Print("[WARN] notifier canceled")
