@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"os"
+	"strings"
 	"sync"
 	"sync/atomic"
 	"syscall"
@@ -123,6 +124,14 @@ func TestFormat(t *testing.T) {
 			assert.Equal(t, tt.out, out)
 		})
 	}
+}
+
+func TestGetDump(t *testing.T) {
+	dump := getDump()
+	assert.True(t, strings.Contains(dump, "goroutine"))
+	assert.True(t, strings.Contains(dump, "[running]"))
+	assert.True(t, strings.Contains(dump, "app/main.go"))
+	log.Printf("\n dump: %s", dump)
 }
 
 type pubMock struct {
