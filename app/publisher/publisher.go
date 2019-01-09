@@ -5,6 +5,7 @@ import (
 
 	"github.com/ChimeraCoder/anaconda"
 	log "github.com/go-pkgz/lgr"
+	"github.com/pkg/errors"
 
 	"github.com/umputun/rss2twitter/app/rss"
 )
@@ -33,6 +34,12 @@ type Twitter struct {
 func (t Twitter) Publish(event rss.Event, formatter func(rss.Event) string) error {
 	log.Printf("[INFO] publish to twitter %+v", event)
 	api := anaconda.NewTwitterApiWithCredentials(t.AccessToken, t.AccessSecret, t.ConsumerKey, t.ConsumerSecret)
-	_, err := api.PostTweet(formatter(event), url.Values{})
-	return err
+	v := url.Values{}
+	v.Set("tweet_mode", "extended")
+	msg := formatter(event)
+	if _, err := api.PostTweet(msg, v); err != nil {
+		return errors.Wrap(err, "can't send to twitter")
+	}
+	log.Printf("[DEBUG] published to twitter %s", msg)
+	return nil
 }

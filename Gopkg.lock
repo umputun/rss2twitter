@@ -50,6 +50,17 @@
   version = "v1.1.1"
 
 [[projects]]
+  digest = "1:b070224c529b49d69595c7b23bc7c177e2460a61d005ec600cc28d53cc339fde"
+  name = "github.com/denisbrodbeck/striphtmltags"
+  packages = [
+    ".",
+    "html/template",
+  ]
+  pruneopts = "UT"
+  revision = "a9bbd7415a054d1695c359c5e72797539a201ce8"
+  version = "v6.6.6"
+
+[[projects]]
   branch = "master"
   digest = "1:efe7dc6d12119a36c1a617b574e99ac9c5ca8fbff57eb283a60462552b7c782a"
   name = "github.com/dustin/go-jsonpointer"
@@ -182,6 +193,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/ChimeraCoder/anaconda",
+    "github.com/denisbrodbeck/striphtmltags",
     "github.com/go-pkgz/lgr",
     "github.com/jessevdk/go-flags",
     "github.com/mmcdole/gofeed",

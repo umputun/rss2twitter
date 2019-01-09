@@ -11,6 +11,7 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/denisbrodbeck/striphtmltags"
 	log "github.com/go-pkgz/lgr"
 	flags "github.com/jessevdk/go-flags"
 
@@ -68,13 +69,30 @@ func main() {
 				// template failed to parse record, backup predefined format
 				return fmt.Sprintf("%s - %s", r.Title, r.Link)
 			}
-			return b1.String()
+			return format(b1.String(), 275)
 		})
 		if err != nil {
 			log.Printf("[WARN] failed to publish, %s", err)
 		}
 	}
 	log.Print("[INFO] terminated")
+}
+
+// format cleans text (removes html tags) and shrinks result
+func format(inp string, max int) string {
+	res := striphtmltags.StripTags(inp)
+	if len([]rune(res)) > max {
+		snippet := []rune(res)[:max]
+		//go back in snippet and found first space
+		for i := len(snippet) - 1; i >= 0; i-- {
+			if snippet[i] == ' ' {
+				snippet = snippet[:i]
+				break
+			}
+		}
+		res = string(snippet) + " ..."
+	}
+	return res
 }
 
 // getDump reads runtime stack and returns as a string
