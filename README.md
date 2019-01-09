@@ -14,7 +14,7 @@ Use provided `docker-compose.yml` and change `FEED` value. All twitter-api crede
 - `{{.Link}}` - rss link
 - `{{.Text}}` - item description
 
-_default is ` {{.Title}} - {{.Link}}`
+_default is `{{.Title}} - {{.Link}}`_
   
 ## Parameters
 

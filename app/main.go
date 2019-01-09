@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"errors"
 	"fmt"
 	"os"
 	"os/signal"
@@ -19,15 +20,15 @@ import (
 	"github.com/umputun/rss2twitter/app/rss"
 )
 
-var opts struct {
+type opts struct {
 	Refresh time.Duration `short:"r" long:"refresh" env:"REFRESH" default:"30s" description:"refresh interval"`
 	TimeOut time.Duration `short:"t" long:"timeout" env:"TIMEOUT" default:"5s" description:"rss feed timeout"`
 	Feed    string        `short:"f" long:"feed" env:"FEED" required:"true" description:"rss feed url"`
 
-	ConsumerKey    string `long:"consumer-key" env:"TWI_CONSUMER_KEY" required:"true" description:"twitter consumer key"`
-	ConsumerSecret string `long:"consumer-secret" env:"TWI_CONSUMER_SECRET" required:"true" description:"twitter consumer secret"`
-	AccessToken    string `long:"access-token" env:"TWI_ACCESS_TOKEN" required:"true" description:"twitter access token"`
-	AccessSecret   string `long:"access-secret" env:"TWI_ACCESS_SECRET" required:"true" description:"twitter access secret"`
+	ConsumerKey    string `long:"consumer-key" env:"TWI_CONSUMER_KEY" description:"twitter consumer key"`
+	ConsumerSecret string `long:"consumer-secret" env:"TWI_CONSUMER_SECRET" description:"twitter consumer secret"`
+	AccessToken    string `long:"access-token" env:"TWI_ACCESS_TOKEN" description:"twitter access token"`
+	AccessSecret   string `long:"access-secret" env:"TWI_ACCESS_SECRET" description:"twitter access secret"`
 
 	Template string `long:"template" env:"TEMPLATE" default:"{{.Title}} - {{.Link}}" description:"twitter message template"`
 	Dry      bool   `long:"dry" env:"DRY" description:"dry mode"`
@@ -36,36 +37,59 @@ var opts struct {
 
 var revision = "unknown"
 
+type notifier interface {
+	Go(ctx context.Context) <-chan rss.Event
+}
+
 func main() {
 	fmt.Printf("rss2twitter - %s\n", revision)
-	if _, err := flags.Parse(&opts); err != nil {
+	o := opts{}
+	if _, err := flags.Parse(&o); err != nil {
 		os.Exit(1)
 	}
 
-	if opts.Dbg {
+	if o.Dbg {
 		log.Setup(log.Debug)
 	}
 
-	notifier := rss.Notify{Feed: opts.Feed, Duration: opts.Refresh, Timeout: opts.TimeOut}
-	var pub publisher.Interface = publisher.Twitter{
-		ConsumerKey:    opts.ConsumerKey,
-		ConsumerSecret: opts.ConsumerSecret,
-		AccessToken:    opts.AccessToken,
-		AccessSecret:   opts.AccessSecret,
+	notifier, pub, err := setup(o)
+	if err != nil {
+		log.Printf("[PANIC] failed to setup, %v", err)
 	}
 
-	if opts.Dry { // override publisher to stdout only, no actual twitter publishing
-		pub = publisher.Stdout{}
+	do(context.Background(), notifier, pub, o.Template)
+
+	log.Print("[INFO] terminated")
+}
+
+func setup(o opts) (n notifier, p publisher.Interface, err error) {
+	n = &rss.Notify{Feed: o.Feed, Duration: o.Refresh, Timeout: o.TimeOut}
+	p = publisher.Twitter{
+		ConsumerKey:    o.ConsumerKey,
+		ConsumerSecret: o.ConsumerSecret,
+		AccessToken:    o.AccessToken,
+		AccessSecret:   o.AccessSecret,
+	}
+
+	if o.Dry { // override publisher to stdout only, no actual twitter publishing
+		p = publisher.Stdout{}
 		log.Print("[INFO] dry mode")
+	} else {
+		if o.ConsumerKey == "" || o.ConsumerSecret == "" || o.AccessToken == "" || o.AccessSecret == "" {
+			return n, p, errors.New("token credentials missing")
+		}
 	}
+	return n, p, nil
+}
 
-	log.Printf("[INFO] message template - %q", opts.Template)
-
-	ch := notifier.Go(context.Background())
+// do runs event loop getting rss events and publishing them
+func do(ctx context.Context, notif notifier, pub publisher.Interface, tmpl string) {
+	log.Printf("[INFO] message template - %q", tmpl)
+	ch := notif.Go(ctx)
 	for event := range ch {
 		err := pub.Publish(event, func(r rss.Event) string {
 			b1 := bytes.Buffer{}
-			if err := template.Must(template.New("twi").Parse(opts.Template)).Execute(&b1, event); err != nil {
+			if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, event); err != nil {
 				// template failed to parse record, backup predefined format
 				return fmt.Sprintf("%s - %s", r.Title, r.Link)
 			}
@@ -75,7 +99,6 @@ func main() {
 			log.Printf("[WARN] failed to publish, %s", err)
 		}
 	}
-	log.Print("[INFO] terminated")
 }
 
 // format cleans text (removes html tags) and shrinks result

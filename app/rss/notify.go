@@ -28,7 +28,7 @@ type Event struct {
 	Title     string
 	Link      string
 	Text      string
-	guid      string
+	GUID      string
 }
 
 // Go starts notifier and returns events channel
@@ -69,14 +69,14 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 				continue
 			}
 			event, err := n.feedEvent(feedData)
-			if lastGUID != event.guid && err == nil {
+			if lastGUID != event.GUID && err == nil {
 				if lastGUID != "" { // don't notify on initial change
-					log.Printf("[INFO] new event %s - %s", event.guid, event.Title)
+					log.Printf("[INFO] new event %s - %s", event.GUID, event.Title)
 					ch <- event
 				} else {
-					log.Printf("[INFO] ignore first event %s - %s", event.guid, event.Title)
+					log.Printf("[INFO] ignore first event %s - %s", event.GUID, event.Title)
 				}
-				lastGUID = event.guid
+				lastGUID = event.GUID
 			}
 			if !waitOrCancel(n.ctx) {
 				log.Print("[WARN] notifier canceled")
@@ -108,7 +108,7 @@ func (n *Notify) feedEvent(feed *gofeed.Feed) (e Event, err error) {
 	e.Title = feed.Items[0].Title
 	e.Link = feed.Items[0].Link
 	e.Text = "\n" + feed.Items[0].Description
-	e.guid = feed.Items[0].GUID
+	e.GUID = feed.Items[0].GUID
 
 	return e, nil
 }
