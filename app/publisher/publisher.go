@@ -2,6 +2,7 @@ package publisher
 
 import (
 	"net/url"
+	"strings"
 
 	"github.com/ChimeraCoder/anaconda"
 	log "github.com/go-pkgz/lgr"
@@ -32,7 +33,7 @@ type Twitter struct {
 
 // Publish to twitter
 func (t Twitter) Publish(event rss.Event, formatter func(rss.Event) string) error {
-	log.Printf("[INFO] publish to twitter %+v", event)
+	log.Printf("[INFO] publish to twitter %+v", event.Title)
 	api := anaconda.NewTwitterApiWithCredentials(t.AccessToken, t.AccessSecret, t.ConsumerKey, t.ConsumerSecret)
 	v := url.Values{}
 	v.Set("tweet_mode", "extended")
@@ -40,6 +41,6 @@ func (t Twitter) Publish(event rss.Event, formatter func(rss.Event) string) erro
 	if _, err := api.PostTweet(msg, v); err != nil {
 		return errors.Wrap(err, "can't send to twitter")
 	}
-	log.Printf("[DEBUG] published to twitter %s", msg)
+	log.Printf("[DEBUG] published to twitter %s", strings.Replace(msg, "\n", " ", -1))
 	return nil
 }
