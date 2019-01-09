@@ -31,3 +31,7 @@ Application Options:
       --dry              dry mode [$DRY]
       --dbg              debug mode [$DEBUG]
 ```
+
+- refresh interval defines how often RSS feed will be checked and restricts the minimal time interval between two tweets. 
+- values for `refresh` and `timeout` should be presented with units "d" (days), "h" (hours), "m" (minutes) os "s" (seconds)
+- `dry` disables publishing to twitter and sends updates to logger only
