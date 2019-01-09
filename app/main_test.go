@@ -4,14 +4,56 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"sync"
+	"sync/atomic"
+	"syscall"
 	"testing"
 	"time"
 
+	log "github.com/go-pkgz/lgr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/umputun/rss2twitter/app/rss"
 )
 
+func TestMain(t *testing.T) {
+
+	var n int32
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("req %+v", r)
+		fnum := atomic.AddInt32(&n, int32(1))
+		if fnum > 2 {
+			fnum = 2
+		}
+		data, err := ioutil.ReadFile(fmt.Sprintf("rss/testdata/f%d.xml", fnum))
+		require.NoError(t, err)
+		w.WriteHeader(200)
+		w.Write(data)
+	}))
+	defer ts.Close()
+
+	os.Args = []string{"app", "--feed=" + ts.URL + "/rss", "--dry", "--dbg", "--refresh=100ms"}
+
+	go func() {
+		time.Sleep(500 * time.Millisecond)
+		err := syscall.Kill(syscall.Getpid(), syscall.SIGTERM)
+		require.Nil(t, err, "kill")
+	}()
+
+	wg := sync.WaitGroup{}
+	wg.Add(1)
+	go func() {
+		st := time.Now()
+		main()
+		require.True(t, time.Since(st).Seconds() < 1, "should take about 500msec")
+		wg.Done()
+	}()
+	wg.Wait()
+}
 func TestSetupDry(t *testing.T) {
 	o := opts{Feed: "http://example.com", Dry: true}
 	n, p, err := setup(o)

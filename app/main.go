@@ -57,8 +57,16 @@ func main() {
 		log.Printf("[PANIC] failed to setup, %v", err)
 	}
 
-	do(context.Background(), notif, pub, o.Template)
+	ctx, cancel := context.WithCancel(context.Background())
+	go func() { // catch signal and invoke graceful termination
+		stop := make(chan os.Signal, 1)
+		signal.Notify(stop, os.Interrupt, syscall.SIGTERM)
+		<-stop
+		log.Printf("[WARN] interrupt signal")
+		cancel()
+	}()
 
+	do(ctx, notif, pub, o.Template)
 	log.Print("[INFO] terminated")
 }
 
