@@ -59,7 +59,7 @@ func main() {
 	}
 
 	ctx, cancel := context.WithCancel(context.Background())
-	go func() { // catch signal and invoke graceful termination
+	go func() { // catch SIGTERM signal and invoke graceful termination
 		stop := make(chan os.Signal, 1)
 		signal.Notify(stop, os.Interrupt, syscall.SIGTERM)
 		<-stop
@@ -115,7 +115,7 @@ func format(inp string, max int) string {
 	res := striphtmltags.StripTags(inp)
 	if len([]rune(res)) > max {
 		snippet := []rune(res)[:max]
-		//go back in snippet and found first space
+		// go back in snippet and found first space
 		for i := len(snippet) - 1; i >= 0; i-- {
 			if snippet[i] == ' ' {
 				snippet = snippet[:i]
