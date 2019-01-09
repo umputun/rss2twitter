@@ -58,8 +58,8 @@ func TestDoCanceled(t *testing.T) {
 	}}
 	ctx, cancel := context.WithCancel(context.Background())
 	time.AfterFunc(time.Millisecond*150, func() { cancel() })
-	do(ctx, &notif, &pub, "{{.Title}} - {{.Link}}")
-	assert.Equal(t, "t1 - l1\n", pub.buf.String())
+	do(ctx, &notif, &pub, "{{.Title}} - {{.Link}} {{.Text}}")
+	assert.Equal(t, "t1 - l1 ttt2\n", pub.buf.String())
 }
 
 func TestFormat(t *testing.T) {
