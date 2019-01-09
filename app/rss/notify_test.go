@@ -35,6 +35,7 @@ func TestNotify(t *testing.T) {
 	st := time.Now()
 	e := <-ch
 	t.Logf("%+v", e)
+	e.Text = ""
 	assert.Equal(t, Event{ChanTitle: "Радио-Т", Title: "Радио-Т 626",
 		Link: "https://radio-t.com/p/2018/12/01/podcast-626/", guid: "https://radio-t.com/p/2018/12/01//podcast-626/"}, e)
 	assert.True(t, time.Since(st) >= time.Millisecond*250)

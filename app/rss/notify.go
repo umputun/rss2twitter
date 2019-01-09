@@ -70,7 +70,7 @@ func (n *Notify) Go(ctx context.Context) <-chan Event {
 			}
 			event, err := n.feedEvent(feedData)
 			if lastGUID != event.guid && err == nil {
-				if lastGUID != "xyz" { // don't notify on initial change
+				if lastGUID != "" { // don't notify on initial change
 					log.Printf("[INFO] new event %s - %s", event.guid, event.Title)
 					ch <- event
 				} else {
