@@ -52,12 +52,12 @@ func main() {
 		log.Setup(log.Debug)
 	}
 
-	notifier, pub, err := setup(o)
+	notif, pub, err := setup(o)
 	if err != nil {
 		log.Printf("[PANIC] failed to setup, %v", err)
 	}
 
-	do(context.Background(), notifier, pub, o.Template)
+	do(context.Background(), notif, pub, o.Template)
 
 	log.Print("[INFO] terminated")
 }
