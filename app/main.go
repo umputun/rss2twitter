@@ -8,6 +8,7 @@ import (
 	"os"
 	"os/signal"
 	"runtime"
+	"strings"
 	"syscall"
 	"text/template"
 	"time"
@@ -101,7 +102,7 @@ func do(ctx context.Context, notif notifier, pub publisher.Interface, tmpl strin
 				// template failed to parse record, backup predefined format
 				return fmt.Sprintf("%s - %s", r.Title, r.Link)
 			}
-			return format(b1.String(), 275)
+			return strings.Replace(format(b1.String(), 275), `\n`, "\n", -1) // \n in template
 		})
 		if err != nil {
 			log.Printf("[WARN] failed to publish, %s", err)
