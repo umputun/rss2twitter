@@ -7,7 +7,7 @@ ADD . /go/src/github.com/umputun/rss2twitter
 RUN cd app && go test ./...
 
 # linters
-RUN golangci-lint run --out-format=tab --disable-all --tests=false --enable=interfacer --enable=unconvert \
+RUN golangci-lint run --deadline=300s --out-format=tab --disable-all --tests=false --enable=interfacer --enable=unconvert \
     --enable=megacheck --enable=structcheck --enable=gas --enable=gocyclo --enable=dupl --enable=misspell \
     --enable=maligned --enable=unparam --enable=varcheck --enable=deadcode --enable=typecheck --enable=errcheck ./...
 
