@@ -53,6 +53,8 @@ func main() {
 		log.Setup(log.Debug)
 	}
 
+	catchSignals()
+
 	notif, pub, err := setup(o)
 	if err != nil {
 		log.Printf("[PANIC] failed to setup, %v", err)
@@ -83,10 +85,10 @@ func setup(o opts) (n notifier, p publisher.Interface, err error) {
 	if o.Dry { // override publisher to stdout only, no actual twitter publishing
 		p = publisher.Stdout{}
 		log.Print("[INFO] dry mode")
-	} else {
-		if o.ConsumerKey == "" || o.ConsumerSecret == "" || o.AccessToken == "" || o.AccessSecret == "" {
-			return n, p, errors.New("token credentials missing")
-		}
+	}
+
+	if !o.Dry && (o.ConsumerKey == "" || o.ConsumerSecret == "" || o.AccessToken == "" || o.AccessSecret == "") {
+		return n, p, errors.New("token credentials missing")
 	}
 	return n, p, nil
 }
@@ -98,7 +100,7 @@ func do(ctx context.Context, notif notifier, pub publisher.Interface, tmpl strin
 	for event := range ch {
 		err := pub.Publish(event, func(r rss.Event) string {
 			b1 := bytes.Buffer{}
-			if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, event); err != nil {
+			if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, event); err != nil { //nolint
 				// template failed to parse record, backup predefined format
 				return fmt.Sprintf("%s - %s", r.Title, r.Link)
 			}
@@ -138,7 +140,7 @@ func getDump() string {
 	return string(stacktrace[:length])
 }
 
-func init() {
+func catchSignals() {
 	// catch SIGQUIT and print stack traces
 	sigChan := make(chan os.Signal)
 	go func() {

@@ -1,3 +1,5 @@
+// Package rss implements rss event publisher. Posts new events to returned channel.
+// Each event represents a new rss item
 package rss
 
 import (
