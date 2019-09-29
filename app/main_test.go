@@ -33,7 +33,7 @@ func TestMainApp(t *testing.T) {
 		data, err := ioutil.ReadFile(fmt.Sprintf("rss/testdata/f%d.xml", fnum))
 		require.NoError(t, err)
 		w.WriteHeader(200)
-		w.Write(data)
+		_, _ = w.Write(data)
 	}))
 	defer ts.Close()
 
@@ -151,15 +151,15 @@ type notifierMock struct {
 func (m *notifierMock) Go(ctx context.Context) <-chan rss.Event {
 	ch := make(chan rss.Event)
 	go func() {
+		defer close(ch)
 		for _, e := range m.events {
 			select {
 			case <-ctx.Done():
-				break
+				return
 			case <-time.After(m.delay):
 				ch <- e
 			}
 		}
-		close(ch)
 	}()
 	return ch
 }

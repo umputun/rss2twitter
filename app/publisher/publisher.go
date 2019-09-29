@@ -1,3 +1,4 @@
+// Package publisher sends forward rss events to publisher interface (twitter)
 package publisher
 
 import (

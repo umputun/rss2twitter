@@ -24,7 +24,7 @@ func TestNotify(t *testing.T) {
 		data, err := ioutil.ReadFile(fmt.Sprintf("testdata/f%d.xml", fnum))
 		require.NoError(t, err)
 		w.WriteHeader(200)
-		w.Write(data)
+		_, _ = w.Write(data)
 	}))
 
 	defer ts.Close()
