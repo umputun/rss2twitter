@@ -21,7 +21,7 @@ import (
 	"github.com/umputun/rss2twitter/app/rss"
 )
 
-func TestMain(t *testing.T) {
+func TestMainApp(t *testing.T) {
 
 	var n int32
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
