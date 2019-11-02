@@ -24,7 +24,7 @@ jobs:
     - name: test and lint
       run: |
         go test -mod=vendor -covermode=count -coverprofile=profile.cov ./...
-        GITHUB_WORKSPACE/golangci-lint run
+        $GITHUB_WORKSPACE/golangci-lint run
         
     - name: submit coverage
       run: |
@@ -35,7 +35,6 @@ jobs:
           export GIT_BRANCH=$GIT_TAG
         fi
 
-        cd backend
         $(go env GOPATH)/bin/goveralls -service="GitHub Action" -coverprofile=$GITHUB_WORKSPACE/profile.cov -repotoken $COVERALLS_TOKEN
       env:
         COVERALLS_TOKEN: ${{secrets.COVERALLS_TOKEN}}
