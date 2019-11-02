@@ -16,16 +16,16 @@ jobs:
     - name: check out code
       uses: actions/checkout@v1
 
-    - name: install golangci-lint and goveralls
-      run: |
-        curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $GITHUB_WORKSPACE v1.20.0
-        go get -u github.com/mattn/goveralls
-
     - name: test and lint
       run: |
         go test -mod=vendor -covermode=count -coverprofile=profile.cov ./...
         $GITHUB_WORKSPACE/golangci-lint run
-        
+
+    - name: install golangci-lint and goveralls
+      run: |
+        curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $GITHUB_WORKSPACE v1.20.0
+         GO111MODULE=off go get -u github.com/mattn/goveralls
+
     - name: submit coverage
       run: |
         export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
@@ -35,7 +35,7 @@ jobs:
           export GIT_BRANCH=$GIT_TAG
         fi
 
-        $(go env GOPATH)/bin/goveralls -service="GitHub Action" -coverprofile=$GITHUB_WORKSPACE/profile.cov -repotoken $COVERALLS_TOKEN
+        $(go env GOPATH)/bin/goveralls -service="GitHub Action" -coverprofile=$GITHUB_WORKSPACE/profile.cov
       env:
         COVERALLS_TOKEN: ${{secrets.COVERALLS_TOKEN}}
 
