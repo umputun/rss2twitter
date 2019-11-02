@@ -1,6 +1,8 @@
 package lgr
 
-import stdlog "log"
+import (
+	stdlog "log"
+)
 
 var def = New() // default logger doesn't allow DEBUG and doesn't add caller info
 
@@ -12,7 +14,7 @@ type L interface {
 // Func type is an adapter to allow the use of ordinary functions as Logger.
 type Func func(format string, args ...interface{})
 
-// Logf calls f(id)
+// Logf calls f(format, args...)
 func (f Func) Logf(format string, args ...interface{}) { f(format, args...) }
 
 // NoOp logger
@@ -23,19 +25,24 @@ var Std = Func(func(format string, args ...interface{}) { stdlog.Printf(format, 
 
 // Printf simplifies replacement of std logger
 func Printf(format string, args ...interface{}) {
-	def.Logf(format, args...)
+	def.logf(format, args...)
 }
 
 // Print simplifies replacement of std logger
 func Print(line string) {
-	def.Logf(line)
+	def.logf(line)
+}
+
+// Fatalf simplifies replacement of std logger
+func Fatalf(format string, args ...interface{}) {
+	def.logf(format, args...)
+	def.fatal()
 }
 
 // Setup default logger with options
 func Setup(opts ...Option) {
 	def = New(opts...)
-	def.skipCallers = 2
 }
 
-// Default returns pre-constructed def logger (debug on, callers disabled)
+// Default returns pre-constructed def logger (debug off, callers disabled)
 func Default() L { return def }

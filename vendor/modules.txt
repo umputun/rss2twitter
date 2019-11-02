@@ -4,7 +4,7 @@ github.com/ChimeraCoder/anaconda
 github.com/ChimeraCoder/tokenbucket
 # github.com/PuerkitoBio/goquery v1.5.0
 github.com/PuerkitoBio/goquery
-# github.com/andybalholm/cascadia v1.0.0
+# github.com/andybalholm/cascadia v1.1.0
 github.com/andybalholm/cascadia
 # github.com/azr/backoff v0.0.0-20160115115103-53511d3c7330
 github.com/azr/backoff
@@ -19,7 +19,7 @@ github.com/dustin/go-jsonpointer
 github.com/dustin/gojson
 # github.com/garyburd/go-oauth v0.0.0-20180319155456-bca2e7f09a17
 github.com/garyburd/go-oauth/oauth
-# github.com/go-pkgz/lgr v0.1.5
+# github.com/go-pkgz/lgr v0.6.3
 github.com/go-pkgz/lgr
 # github.com/jessevdk/go-flags v1.4.0
 github.com/jessevdk/go-flags
@@ -38,12 +38,12 @@ github.com/pmezard/go-difflib/difflib
 # github.com/stretchr/testify v1.3.0
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
-# golang.org/x/net v0.0.0-20181201002055-351d144fa1fc
+# golang.org/x/net v0.0.0-20191101175033-0deb6923b6d9
 golang.org/x/net/context
 golang.org/x/net/html
 golang.org/x/net/html/atom
 golang.org/x/net/html/charset
-# golang.org/x/text v0.3.0
+# golang.org/x/text v0.3.2
 golang.org/x/text/encoding
 golang.org/x/text/encoding/charmap
 golang.org/x/text/encoding/htmlindex
@@ -54,6 +54,8 @@ golang.org/x/text/encoding/korean
 golang.org/x/text/encoding/simplifiedchinese
 golang.org/x/text/encoding/traditionalchinese
 golang.org/x/text/encoding/unicode
+golang.org/x/text/internal/language
+golang.org/x/text/internal/language/compact
 golang.org/x/text/internal/tag
 golang.org/x/text/internal/utf8internal
 golang.org/x/text/language
