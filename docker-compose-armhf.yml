@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+
+  rss2twitter:
+    build: 
+      context: .
+      dockerfile: Dockerfile.armhf
+    image: umputun/rss2twitter-armhf:latest
+    container_name: rss2twitter
+    hostname: rss2twitter
+    restart: always
+
+    logging: &default_logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+    environment:
+      - FEED=http://lorem-rss.herokuapp.com/feed?unit=second&interval=30
+      - REFRESH=1m
+      - TWI_CONSUMER_KEY
+      - TWI_CONSUMER_SECRET
+      - TWI_ACCESS_TOKEN
+      - TWI_ACCESS_SECRET
+      - "TEMPLATE={{.Title}} - {{.Link}} #mytag"
+    command: ["/srv/rss2twitter", "--dry"]

@@ -1,0 +1,86 @@
+FROM golang:1.13-alpine AS build
+
+ENV \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=arm \
+    GOARM=7 \
+    GOVERALLS=0.0.5 \
+    GOLANGCI=1.23.6 \
+    STATIK=0.1.6
+
+RUN \
+    apk add --no-cache --update tzdata git bash curl && \
+    cp /usr/share/zoneinfo/America/Chicago /etc/localtime && \
+    rm -rf /var/cache/apk/*
+
+RUN \
+    go version && \
+    go get -u -v github.com/golang/dep/cmd/dep && \
+    go get -u -v github.com/kardianos/govendor && \
+    go get -u -v github.com/jteeuwen/go-bindata/... && \
+    go get -u -v github.com/stretchr/testify && \
+    go get -u -v github.com/vektra/mockery/.../
+
+RUN \
+    go get -u -v github.com/golangci/golangci-lint/cmd/golangci-lint && \
+    cd /go/src/github.com/golangci/golangci-lint && \
+    git checkout v${GOLANGCI} && \
+    cd /go/src/github.com/golangci/golangci-lint/cmd/golangci-lint && \
+    go install -ldflags "-X 'main.version=$(git describe --tags)' -X 'main.commi                                   t=$(git rev-parse --short HEAD)' -X 'main.date=$(date)'" && \
+    golangci-lint --version
+
+RUN \
+    go get -u -v github.com/mattn/goveralls && \
+    cd /go/src/github.com/mattn/goveralls && \
+    git checkout v${GOVERALLS} && \
+    go install github.com/mattn/goveralls
+
+RUN \
+    go get -u -v github.com/rakyll/statik && \
+    cd /go/src/github.com/rakyll/statik && \
+    git checkout v${STATIK} && \
+    go install github.com/rakyll/statik
+
+
+WORKDIR /build/rss2twitter
+ADD . /build/rss2twitter
+
+# run tests
+RUN cd app && go test -mod=vendor ./...
+
+RUN \
+    go build -mod=vendor -o rss2twitter -ldflags "-X main.revision=${version} -s -w" ./app
+
+FROM arm32v7/alpine:latest
+
+ENV \
+    TERM=xterm-color           \
+    TIME_ZONE=America/Chicago  \
+    APP_USER=app               \
+    APP_UID=1001               \
+    DOCKER_GID=999         
+
+
+RUN \
+    apk add --no-cache --update su-exec tzdata curl ca-certificates dumb-init && \
+    ln -s /sbin/su-exec /usr/local/bin/gosu && \
+    mkdir -p /home/$APP_USER && \
+    adduser -s /bin/sh -D -u $APP_UID $APP_USER && chown -R $APP_USER:$APP_USER /home/$APP_USER && \
+    delgroup ping && addgroup -g 998 ping && \
+    addgroup -g ${DOCKER_GID} docker && addgroup ${APP_USER} docker && \
+    mkdir -p /srv && chown -R $APP_USER:$APP_USER /srv && \
+    cp /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime && \
+    echo "${TIME_ZONE}" > /etc/timezone && date && \
+    ln -s /usr/bin/dumb-init /sbin/dinit && \
+    rm -rf /var/cache/apk/*
+    
+COPY --from=build /build/rss2twitter/rss2twitter /srv/rss2twitter
+RUN \
+    chown -R app:app /srv && \
+    chmod +x /srv/rss2twitter
+
+WORKDIR /srv
+
+CMD ["/srv/rss2twitter", "--dry"]
+ENTRYPOINT ["/sbin/su-exec", "app"]
