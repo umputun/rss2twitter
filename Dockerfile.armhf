@@ -27,7 +27,7 @@ RUN \
     cd /go/src/github.com/golangci/golangci-lint && \
     git checkout v${GOLANGCI} && \
     cd /go/src/github.com/golangci/golangci-lint/cmd/golangci-lint && \
-    go install -ldflags "-X 'main.version=$(git describe --tags)' -X 'main.commi                                   t=$(git rev-parse --short HEAD)' -X 'main.date=$(date)'" && \
+    go install -ldflags "-X 'main.version=$(git describe --tags)' -X 'main.commit=$(git rev-parse --short HEAD)' -X 'main.date=$(date)'" && \
     golangci-lint --version
 
 RUN \
@@ -42,7 +42,6 @@ RUN \
     git checkout v${STATIK} && \
     go install github.com/rakyll/statik
 
-
 WORKDIR /build/rss2twitter
 ADD . /build/rss2twitter
 
@@ -51,6 +50,7 @@ RUN cd app && go test -mod=vendor ./...
 
 RUN \
     go build -mod=vendor -o rss2twitter -ldflags "-X main.revision=${version} -s -w" ./app
+
 
 FROM arm32v7/alpine:latest
 
