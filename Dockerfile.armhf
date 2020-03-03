@@ -1,0 +1,45 @@
+FROM golang:1.13-alpine AS build
+
+ENV CGO_ENABLED=0
+
+WORKDIR /build/rss2twitter
+ADD . /build/rss2twitter
+
+# run tests
+RUN cd app && go test -mod=vendor ./...
+
+RUN \
+    go build -mod=vendor -o rss2twitter -ldflags "-X main.revision=${version} -s -w" ./app
+
+
+FROM arm32v7/alpine:latest
+
+ENV \
+    TERM=xterm-color           \
+    TIME_ZONE=America/Chicago  \
+    APP_USER=app               \
+    APP_UID=1001               \
+    DOCKER_GID=999         
+
+RUN \
+    apk add --no-cache --update su-exec tzdata curl ca-certificates dumb-init && \
+    ln -s /sbin/su-exec /usr/local/bin/gosu && \
+    mkdir -p /home/$APP_USER && \
+    adduser -s /bin/sh -D -u $APP_UID $APP_USER && chown -R $APP_USER:$APP_USER /home/$APP_USER && \
+    delgroup ping && addgroup -g 998 ping && \
+    addgroup -g ${DOCKER_GID} docker && addgroup ${APP_USER} docker && \
+    mkdir -p /srv && chown -R $APP_USER:$APP_USER /srv && \
+    cp /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime && \
+    echo "${TIME_ZONE}" > /etc/timezone && date && \
+    ln -s /usr/bin/dumb-init /sbin/dinit && \
+    rm -rf /var/cache/apk/*
+    
+COPY --from=build /build/rss2twitter/rss2twitter /srv/rss2twitter
+RUN \
+    chown -R app:app /srv && \
+    chmod +x /srv/rss2twitter
+
+WORKDIR /srv
+
+CMD ["/srv/rss2twitter", "--dry"]
+ENTRYPOINT ["/sbin/su-exec", "app"]
