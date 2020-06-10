@@ -23,7 +23,7 @@ type Stdout struct{
 	ExcludeList []string
 }
 
-// Check the exclusion list
+// CheckExclusionList checks the exclusion list for matches
 func CheckExclusionList(excludes []string, msg string) bool {
 	for _, value := range excludes {
 		if len(value) > 0 && !strings.HasPrefix(value, "#") {
