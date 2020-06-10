@@ -14,6 +14,8 @@ RUN \
 
 FROM umputun/baseimage:app-latest
 
+COPY ./exclusion-patterns.txt /srv/exclusion-patterns.txt
+
 COPY --from=build /build/rss2twitter/rss2twitter /srv/rss2twitter
 RUN \
     chown -R app:app /srv && \
