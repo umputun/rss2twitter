@@ -18,6 +18,6 @@ services:
         max-file: "5"
 
     environment:
-      - "TEMPLATE={{.Title}}"
+      - "TEMPLATE={{.Title}} - {{.Link}} #mytag"
 
     # command: ["/srv/rss2twitter", "--dry"]
