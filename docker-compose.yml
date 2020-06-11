@@ -26,5 +26,5 @@ services:
       - TWI_ACCESS_TOKEN
       - TWI_ACCESS_SECRET
       - "TEMPLATE={{.Title}} - {{.Link}} #mytag"
-      -
+
     # command: ["/srv/rss2twitter", "--dry"]
