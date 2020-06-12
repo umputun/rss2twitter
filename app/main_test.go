@@ -18,6 +18,7 @@ import (
 	log "github.com/go-pkgz/lgr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/umputun/rss2twitter/app/publisher"
 	"github.com/umputun/rss2twitter/app/rss"
 )
 
@@ -122,6 +123,24 @@ func TestFormat(t *testing.T) {
 		t.Run(fmt.Sprintf("check-%d", i), func(t *testing.T) {
 			out := format(tt.inp, tt.size)
 			assert.Equal(t, tt.out, out)
+		})
+	}
+}
+
+func TestExclusionPatterns(t *testing.T) {
+	tbl := []struct {
+		msg  		string
+		result  	bool
+		ExcludeList []string
+	}{
+		{"All I hear is blah blah blah", true, []string{"blah"}},
+		{"All I hear is blah blah blah", false, []string{"stuff"}},
+	}
+
+	for i, tt := range tbl {
+		t.Run(fmt.Sprintf("check-%d", i), func(t *testing.T) {
+			result := publisher.CheckExclusionList(tt.ExcludeList, tt.msg)
+			assert.Equal(t, tt.result, result)
 		})
 	}
 }
