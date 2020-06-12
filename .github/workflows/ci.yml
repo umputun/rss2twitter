@@ -34,7 +34,4 @@ jobs:
     - name: build docker image
       run: docker build .
 
-    - name: build docker image for ARM
-      run: docker build -f ./Dockerfile.armhf .
-
 
