@@ -27,7 +27,11 @@ type Stdout struct{
 func CheckExclusionList(excludes []string, msg string) bool {
 	for _, value := range excludes {
 		if len(value) > 0 && !strings.HasPrefix(value, "#") {
-			if match, _ := regexp.MatchString(strings.ToLower(value), strings.ToLower(msg)); match {
+			match, err := regexp.MatchString(strings.ToLower(value), strings.ToLower(msg));
+			if err != nil {
+				log.Printf("[WARN] regexp.MatchString error: %s", err)
+			}
+			if match {
 				log.Printf("[EXCLUDED] matched: %s - %s", value, msg)
 				return true
 			}
