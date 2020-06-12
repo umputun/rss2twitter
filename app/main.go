@@ -78,6 +78,7 @@ func setup(o opts) (n notifier, p publisher.Interface, err error) {
 	content, err := ioutil.ReadFile("exclusion-patterns.txt")
 	if err != nil {
 		log.Print("[WARN] could not read 'exclusion-patterns.txt' file")
+		content = []byte{}
 	}
 	lines := strings.Split(string(content), "\n")
 	n = &rss.Notify{Feed: o.Feed, Duration: o.Refresh, Timeout: o.TimeOut}
