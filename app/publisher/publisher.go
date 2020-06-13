@@ -3,6 +3,7 @@ package publisher
 
 import (
 	"net/url"
+	"regexp"
 	"strings"
 
 	"github.com/ChimeraCoder/anaconda"
@@ -18,11 +19,36 @@ type Interface interface {
 }
 
 // Stdout implements publisher.Interface and sends to stdout
-type Stdout struct{}
+type Stdout struct{
+	ExcludeList []string
+}
+
+// CheckExclusionList checks the exclusion list for matches
+func CheckExclusionList(excludes []string, msg string) bool {
+	for _, value := range excludes {
+		if len(value) > 0 && !strings.HasPrefix(value, "#") {
+			match, err := regexp.MatchString(strings.ToLower(value), strings.ToLower(msg));
+			if err != nil {
+				log.Printf("[WARN] regexp.MatchString error: %v", err)
+				return false
+			}
+			if match {
+				log.Printf("[EXCLUDED] matched: %s - %s", value, msg)
+				return true
+			}
+		}
+	}
+
+	return false
+}
 
 // Publish to logger
 func (s Stdout) Publish(event rss.Event, formatter func(rss.Event) string) error {
-	log.Printf("[INFO] event - %s", formatter(event))
+	msg := formatter(event)
+	if CheckExclusionList(s.ExcludeList, msg) {
+		return nil
+	}
+	log.Printf("[INFO] event - %s", msg)
 	return nil
 }
 
@@ -30,6 +56,7 @@ func (s Stdout) Publish(event rss.Event, formatter func(rss.Event) string) error
 type Twitter struct {
 	ConsumerKey, ConsumerSecret string
 	AccessToken, AccessSecret   string
+	ExcludeList []string
 }
 
 // Publish to twitter
@@ -39,6 +66,11 @@ func (t Twitter) Publish(event rss.Event, formatter func(rss.Event) string) erro
 	v := url.Values{}
 	v.Set("tweet_mode", "extended")
 	msg := formatter(event)
+	// See if it's been excluded
+	if CheckExclusionList(t.ExcludeList, msg) {
+		return nil
+	}
+	// Post the message
 	if _, err := api.PostTweet(msg, v); err != nil {
 		return errors.Wrap(err, "can't send to twitter")
 	}

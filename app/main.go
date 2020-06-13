@@ -5,6 +5,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"os/signal"
 	"runtime"
@@ -74,16 +75,25 @@ func main() {
 }
 
 func setup(o opts) (n notifier, p publisher.Interface, err error) {
+	content, err := ioutil.ReadFile("exclusion-patterns.txt")
+	if err != nil {
+		log.Printf("[WARN] could not read 'exclusion-patterns.txt' file: %v", err)
+		content = []byte{}
+	}
+	lines := strings.Split(string(content), "\n")
 	n = &rss.Notify{Feed: o.Feed, Duration: o.Refresh, Timeout: o.TimeOut}
 	p = publisher.Twitter{
 		ConsumerKey:    o.ConsumerKey,
 		ConsumerSecret: o.ConsumerSecret,
 		AccessToken:    o.AccessToken,
 		AccessSecret:   o.AccessSecret,
+		ExcludeList:    lines,
 	}
 
 	if o.Dry { // override publisher to stdout only, no actual twitter publishing
-		p = publisher.Stdout{}
+		p = publisher.Stdout{
+			ExcludeList:    lines,
+		}
 		log.Print("[INFO] dry mode")
 	}
 

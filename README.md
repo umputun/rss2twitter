@@ -35,3 +35,11 @@ Application Options:
 - refresh interval defines how often RSS feed will be checked and restricts the minimal time interval between two tweets. 
 - values for `refresh` and `timeout` should be presented with units "d" (days), "h" (hours), "m" (minutes) os "s" (seconds)
 - `dry` disables publishing to twitter and sends updates to logger only
+
+## Exclusion Patterns
+
+In the project root, there's a `exclusion-patterns.txt` file that you can use to exclude certain RSS feed messages from being sent to Twitter.
+
+The `exclusion-patterns.txt` contains a list of [regular expressions](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285), one regex per line. Lines starting with # are ignored, and are treated as comments.
+
+If the message from the RSS feed matches any of the regular expressions in the `exclusion-patterns.txt` file, it is not sent to Twitter.

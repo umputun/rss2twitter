@@ -33,7 +33,7 @@ RUN \
     echo "${TIME_ZONE}" > /etc/timezone && date && \
     ln -s /usr/bin/dumb-init /sbin/dinit && \
     rm -rf /var/cache/apk/*
-    
+
 COPY --from=build /build/rss2twitter/rss2twitter /srv/rss2twitter
 RUN \
     chown -R app:app /srv && \
