@@ -1,1 +1,6 @@
-# Put any regular expressions to exclude messages here, one regex per line
+# Put any regular expressions to exclude messages here, one regex per line. Lines starting with # are ignored.
+# Regex examples (more at https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285):
+# ^The
+# end$
+# ^The end$
+# roar
