@@ -30,6 +30,7 @@ func CheckExclusionList(excludes []string, msg string) bool {
 			match, err := regexp.MatchString(strings.ToLower(value), strings.ToLower(msg));
 			if err != nil {
 				log.Printf("[WARN] regexp.MatchString error: %s", err)
+				return false
 			}
 			if match {
 				log.Printf("[EXCLUDED] matched: %s - %s", value, msg)
