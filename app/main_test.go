@@ -130,7 +130,7 @@ func TestFormat(t *testing.T) {
 func TestExclusionPatterns(t *testing.T) {
 	excludes := []string {
 		"^The",
-		"$end",
+		"end$",
 		"^The end$",
 		"roar",
 	}
