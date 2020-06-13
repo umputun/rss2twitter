@@ -128,18 +128,26 @@ func TestFormat(t *testing.T) {
 }
 
 func TestExclusionPatterns(t *testing.T) {
+	excludes := []string {
+		"^The",
+		"$end",
+		"^The end$",
+		"roar",
+	}
 	tbl := []struct {
 		msg  		string
 		result  	bool
-		ExcludeList []string
 	}{
-		{"All I hear is blah blah blah", true, []string{"blah"}},
-		{"All I hear is blah blah blah", false, []string{"stuff"}},
+		{"The end of the world", true},
+		{"This is the end", true},
+		{"The end", true},
+		{"Hear the mighty roar of the lion", true},
+		{"You shall pass!", false},
 	}
 
 	for i, tt := range tbl {
 		t.Run(fmt.Sprintf("check-%d", i), func(t *testing.T) {
-			result := publisher.CheckExclusionList(tt.ExcludeList, tt.msg)
+			result := publisher.CheckExclusionList(excludes, tt.msg)
 			assert.Equal(t, tt.result, result)
 		})
 	}
