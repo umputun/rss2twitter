@@ -29,7 +29,7 @@ func CheckExclusionList(excludes []string, msg string) bool {
 		if len(value) > 0 && !strings.HasPrefix(value, "#") {
 			match, err := regexp.MatchString(strings.ToLower(value), strings.ToLower(msg));
 			if err != nil {
-				log.Printf("[WARN] regexp.MatchString error: %s", err)
+				log.Printf("[WARN] regexp.MatchString error: %v", err)
 				return false
 			}
 			if match {

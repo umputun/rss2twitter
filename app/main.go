@@ -77,7 +77,7 @@ func main() {
 func setup(o opts) (n notifier, p publisher.Interface, err error) {
 	content, err := ioutil.ReadFile("exclusion-patterns.txt")
 	if err != nil {
-		log.Print("[WARN] could not read 'exclusion-patterns.txt' file")
+		log.Printf("[WARN] could not read 'exclusion-patterns.txt' file: %v", err)
 		content = []byte{}
 	}
 	lines := strings.Split(string(content), "\n")
