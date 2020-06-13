@@ -2,6 +2,7 @@ package gofeed
 
 import (
 	"bytes"
+	"context"
 	"errors"
 	"fmt"
 	"io"
@@ -11,6 +12,10 @@ import (
 	"github.com/mmcdole/gofeed/atom"
 	"github.com/mmcdole/gofeed/rss"
 )
+
+// ErrFeedTypeNotDetected is returned when the detection system can not figure
+// out the Feed format
+var ErrFeedTypeNotDetected = errors.New("Failed to detect feed type")
 
 // HTTPError represents an HTTP error returned by a server.
 type HTTPError struct {
@@ -65,14 +70,29 @@ func (f *Parser) Parse(feed io.Reader) (*Feed, error) {
 	case FeedTypeRSS:
 		return f.parseRSSFeed(r)
 	}
-	return nil, errors.New("Failed to detect feed type")
+
+	return nil, ErrFeedTypeNotDetected
 }
 
 // ParseURL fetches the contents of a given url and
 // attempts to parse the response into the universal feed type.
 func (f *Parser) ParseURL(feedURL string) (feed *Feed, err error) {
+	return f.ParseURLWithContext(feedURL, context.Background())
+}
+
+// ParseURLWithContext fetches contents of a given url and
+// attempts to parse the response into the universal feed type.
+// Request could be canceled or timeout via given context
+func (f *Parser) ParseURLWithContext(feedURL string, ctx context.Context) (feed *Feed, err error) {
 	client := f.httpClient()
-	resp, err := client.Get(feedURL)
+
+	req, err := http.NewRequest("GET", feedURL, nil)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	req.Header.Set("User-Agent", "Gofeed/1.0")
+	resp, err := client.Do(req)
 
 	if err != nil {
 		return nil, err

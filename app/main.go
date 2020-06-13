@@ -16,7 +16,7 @@ import (
 
 	"github.com/denisbrodbeck/striphtmltags"
 	log "github.com/go-pkgz/lgr"
-	flags "github.com/jessevdk/go-flags"
+	"github.com/umputun/go-flags"
 
 	"github.com/umputun/rss2twitter/app/publisher"
 	"github.com/umputun/rss2twitter/app/rss"
@@ -92,7 +92,7 @@ func setup(o opts) (n notifier, p publisher.Interface, err error) {
 
 	if o.Dry { // override publisher to stdout only, no actual twitter publishing
 		p = publisher.Stdout{
-			ExcludeList:    lines,
+			ExcludeList: lines,
 		}
 		log.Print("[INFO] dry mode")
 	}
