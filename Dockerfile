@@ -1,5 +1,7 @@
 FROM umputun/baseimage:buildgo-latest as build
 
+ENV CGO_ENABLED=0
+
 WORKDIR /build/rss2twitter
 ADD . /build/rss2twitter
 
@@ -21,5 +23,4 @@ RUN \
 
 WORKDIR /srv
 
-CMD ["/srv/rss2twitter"]
-ENTRYPOINT ["/init.sh"]
+ENTRYPOINT ["/srv/rss2twitter"]
