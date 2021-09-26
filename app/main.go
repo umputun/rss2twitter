@@ -152,7 +152,7 @@ func getDump() string {
 
 func catchSignals() {
 	// catch SIGQUIT and print stack traces
-	sigChan := make(chan os.Signal)
+	sigChan := make(chan os.Signal, 1)
 	go func() {
 		for range sigChan {
 			log.Printf("[INFO] SIGQUIT detected, dump:\n%s", getDump())
