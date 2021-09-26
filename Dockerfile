@@ -23,4 +23,5 @@ RUN \
 
 WORKDIR /srv
 
+USER app
 ENTRYPOINT ["/srv/rss2twitter"]
