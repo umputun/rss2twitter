@@ -63,7 +63,7 @@ jobs:
             -t ghcr.io/${USERNAME}/rss2twitter:${ref} -t ${USERNAME}/rss2twitter:${ref} .
 
     - name: deploy tagged (latest) to ghcr.io and dockerhub
-      if: ${{ github.ref == 'refs/heads/master' }}
+      if: ${{ startsWith(github.ref, 'refs/tags/') }}
       env:
         GITHUB_PACKAGE_TOKEN: ${{ secrets.PKG_TOKEN }}
         DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
