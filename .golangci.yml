@@ -71,4 +71,4 @@ issues:
   exclude-use-default: false
 
 service:
-  golangci-lint-version: 1.19.x
+  golangci-lint-version: 1.41.x

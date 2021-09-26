@@ -5,13 +5,16 @@ github.com/ChimeraCoder/anaconda
 ## explicit
 github.com/ChimeraCoder/tokenbucket
 # github.com/PuerkitoBio/goquery v1.5.1
+## explicit; go 1.13
 github.com/PuerkitoBio/goquery
 # github.com/andybalholm/cascadia v1.1.0
+## explicit
 github.com/andybalholm/cascadia
 # github.com/azr/backoff v0.0.0-20160115115103-53511d3c7330
 ## explicit
 github.com/azr/backoff
 # github.com/davecgh/go-spew v1.1.1
+## explicit
 github.com/davecgh/go-spew/spew
 # github.com/denisbrodbeck/striphtmltags v6.6.6+incompatible
 ## explicit
@@ -27,12 +30,13 @@ github.com/dustin/gojson
 ## explicit
 github.com/garyburd/go-oauth/oauth
 # github.com/go-pkgz/lgr v0.10.4
-## explicit
+## explicit; go 1.15
 github.com/go-pkgz/lgr
 # github.com/json-iterator/go v1.1.10
+## explicit; go 1.12
 github.com/json-iterator/go
 # github.com/mmcdole/gofeed v1.1.3
-## explicit
+## explicit; go 1.14
 github.com/mmcdole/gofeed
 github.com/mmcdole/gofeed/atom
 github.com/mmcdole/gofeed/extensions
@@ -40,29 +44,35 @@ github.com/mmcdole/gofeed/internal/shared
 github.com/mmcdole/gofeed/json
 github.com/mmcdole/gofeed/rss
 # github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf
+## explicit
 github.com/mmcdole/goxpp
 # github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421
+## explicit
 github.com/modern-go/concurrent
 # github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742
+## explicit
 github.com/modern-go/reflect2
 # github.com/pkg/errors v0.9.1
 ## explicit
 github.com/pkg/errors
 # github.com/pmezard/go-difflib v1.0.0
+## explicit
 github.com/pmezard/go-difflib/difflib
 # github.com/stretchr/testify v1.7.0
-## explicit
+## explicit; go 1.13
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
 # github.com/umputun/go-flags v1.5.1
-## explicit
+## explicit; go 1.12
 github.com/umputun/go-flags
 # golang.org/x/net v0.0.0-20200301022130-244492dfa37a
+## explicit; go 1.11
 golang.org/x/net/context
 golang.org/x/net/html
 golang.org/x/net/html/atom
 golang.org/x/net/html/charset
 # golang.org/x/text v0.3.2
+## explicit
 golang.org/x/text/encoding
 golang.org/x/text/encoding/charmap
 golang.org/x/text/encoding/htmlindex
@@ -81,4 +91,5 @@ golang.org/x/text/language
 golang.org/x/text/runes
 golang.org/x/text/transform
 # gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
+## explicit
 gopkg.in/yaml.v3
