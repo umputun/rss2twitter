@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -18,6 +17,7 @@ import (
 	log "github.com/go-pkgz/lgr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+
 	"github.com/umputun/rss2twitter/app/publisher"
 	"github.com/umputun/rss2twitter/app/rss"
 )
@@ -31,7 +31,7 @@ func TestMainApp(t *testing.T) {
 		if fnum > 2 {
 			fnum = 2
 		}
-		data, err := ioutil.ReadFile(fmt.Sprintf("rss/testdata/f%d.xml", fnum))
+		data, err := os.ReadFile(fmt.Sprintf("rss/testdata/f%d.xml", fnum))
 		require.NoError(t, err)
 		w.WriteHeader(200)
 		_, _ = w.Write(data)
@@ -128,15 +128,15 @@ func TestFormat(t *testing.T) {
 }
 
 func TestExclusionPatterns(t *testing.T) {
-	excludes := []string {
+	excludes := []string{
 		"^The",
 		"end$",
 		"^The end$",
 		"roar",
 	}
 	tbl := []struct {
-		msg  		string
-		result  	bool
+		msg    string
+		result bool
 	}{
 		{"The end of the world", true},
 		{"This is the end", true},

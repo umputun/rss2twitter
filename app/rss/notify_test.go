@@ -3,9 +3,9 @@ package rss
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"sync/atomic"
 	"testing"
 	"time"
@@ -21,7 +21,7 @@ func TestNotify(t *testing.T) {
 		if fnum > 2 {
 			fnum = 2
 		}
-		data, err := ioutil.ReadFile(fmt.Sprintf("testdata/f%d.xml", fnum))
+		data, err := os.ReadFile(fmt.Sprintf("testdata/f%d.xml", fnum))
 		require.NoError(t, err)
 		w.WriteHeader(200)
 		_, _ = w.Write(data)

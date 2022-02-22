@@ -5,7 +5,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/signal"
 	"runtime"
@@ -75,7 +74,7 @@ func main() {
 }
 
 func setup(o opts) (n notifier, p publisher.Interface, err error) {
-	content, err := ioutil.ReadFile("exclusion-patterns.txt")
+	content, err := os.ReadFile("exclusion-patterns.txt")
 	if err != nil {
 		log.Printf("[WARN] could not read 'exclusion-patterns.txt' file: %v", err)
 		content = []byte{}
@@ -110,7 +109,7 @@ func do(ctx context.Context, notif notifier, pub publisher.Interface, tmpl strin
 	for event := range ch {
 		err := pub.Publish(event, func(r rss.Event) string {
 			b1 := bytes.Buffer{}
-			if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, event); err != nil { //nolint
+			if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, event); err != nil { // nolint
 				// template failed to parse record, backup predefined format
 				return fmt.Sprintf("%s - %s", r.Title, r.Link)
 			}
