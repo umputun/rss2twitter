@@ -4,11 +4,11 @@ github.com/ChimeraCoder/anaconda
 # github.com/ChimeraCoder/tokenbucket v0.0.0-20131201223612-c5a927568de7
 ## explicit
 github.com/ChimeraCoder/tokenbucket
-# github.com/PuerkitoBio/goquery v1.5.1
+# github.com/PuerkitoBio/goquery v1.8.0
 ## explicit; go 1.13
 github.com/PuerkitoBio/goquery
-# github.com/andybalholm/cascadia v1.1.0
-## explicit
+# github.com/andybalholm/cascadia v1.3.1
+## explicit; go 1.16
 github.com/andybalholm/cascadia
 # github.com/azr/backoff v0.0.0-20160115115103-53511d3c7330
 ## explicit
@@ -32,7 +32,7 @@ github.com/garyburd/go-oauth/oauth
 # github.com/go-pkgz/lgr v0.10.4
 ## explicit; go 1.15
 github.com/go-pkgz/lgr
-# github.com/json-iterator/go v1.1.10
+# github.com/json-iterator/go v1.1.12
 ## explicit; go 1.12
 github.com/json-iterator/go
 # github.com/mmcdole/gofeed v1.1.3
@@ -43,14 +43,14 @@ github.com/mmcdole/gofeed/extensions
 github.com/mmcdole/gofeed/internal/shared
 github.com/mmcdole/gofeed/json
 github.com/mmcdole/gofeed/rss
-# github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf
+# github.com/mmcdole/goxpp v0.0.0-20200921145534-2f3784f67354
 ## explicit
 github.com/mmcdole/goxpp
-# github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421
+# github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
 ## explicit
 github.com/modern-go/concurrent
-# github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742
-## explicit
+# github.com/modern-go/reflect2 v1.0.2
+## explicit; go 1.12
 github.com/modern-go/reflect2
 # github.com/pkg/errors v0.9.1
 ## explicit
@@ -65,14 +65,14 @@ github.com/stretchr/testify/require
 # github.com/umputun/go-flags v1.5.1
 ## explicit; go 1.12
 github.com/umputun/go-flags
-# golang.org/x/net v0.0.0-20200301022130-244492dfa37a
-## explicit; go 1.11
+# golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd
+## explicit; go 1.17
 golang.org/x/net/context
 golang.org/x/net/html
 golang.org/x/net/html/atom
 golang.org/x/net/html/charset
-# golang.org/x/text v0.3.2
-## explicit
+# golang.org/x/text v0.3.7
+## explicit; go 1.17
 golang.org/x/text/encoding
 golang.org/x/text/encoding/charmap
 golang.org/x/text/encoding/htmlindex
