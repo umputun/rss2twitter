@@ -102,40 +102,80 @@ func setup(o opts) (n notifier, p publisher.Interface, err error) {
 	return n, p, nil
 }
 
-// do runs event loop getting rss events and publishing them
+// do runs event loop getting rss events, formatting and publishing them
 func do(ctx context.Context, notif notifier, pub publisher.Interface, tmpl string) {
 	log.Printf("[INFO] message template - %q", tmpl)
 	ch := notif.Go(ctx)
 	for event := range ch {
-		err := pub.Publish(event, func(r rss.Event) string {
-			b1 := bytes.Buffer{}
-			if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, event); err != nil { // nolint
-				// template failed to parse record, backup predefined format
-				return fmt.Sprintf("%s - %s", r.Title, r.Link)
-			}
-			return strings.Replace(format(b1.String(), 275), `\n`, "\n", -1) // \n in template
-		})
+		err := pub.Publish(event, func(r rss.Event) string { return formatMsg(event, tmpl, 279) })
 		if err != nil {
 			log.Printf("[WARN] failed to publish, %s", err)
 		}
 	}
 }
 
-// format cleans text (removes html tags) and shrinks result
-func format(inp string, max int) string {
-	res := striphtmltags.StripTags(inp)
-	if len([]rune(res)) > max {
-		snippet := []rune(res)[:max]
-		// go back in snippet and found first space
+// formatMsg makes a tweet message from rss event, strip html tags and shorten text if necessary
+func formatMsg(ev rss.Event, tmpl string, max int) string {
+
+	shortLinkLen := 23 // url of any length altered to 23 characters by twitter, even if the link itself is less than 23
+
+	// strip html tags from title and text
+	ev.Title = striphtmltags.StripTags(ev.Title)
+	ev.Text = striphtmltags.StripTags(ev.Text)
+
+	applyTempl := func(ev rss.Event, tmpl string) string {
+		var res string
+		b1 := bytes.Buffer{}
+		if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, ev); err != nil { // nolint
+			// template failed to parse record, backup with predefined format
+			res = fmt.Sprintf("%s - %s", ev.Title, ev.Link)
+		} else {
+			res = b1.String()
+		}
+		return strings.Replace(res, `\n`, "\n", -1) // handle \n we may have in the template
+	}
+
+	trimWithDots := func(s string, max int) string {
+		if len([]rune(s)) <= max || max < 4 {
+			return s
+		}
+		snippet := []rune(s)[:max-4] // extra 4 for dots
+		// go back in snippet and found the first space to trim nicely, on the word boundary
 		for i := len(snippet) - 1; i >= 0; i-- {
 			if snippet[i] == ' ' {
 				snippet = snippet[:i]
 				break
 			}
 		}
-		res = string(snippet) + " ..."
+		return string(snippet) + "... " // extra space at the end to make it look better if it has something after
 	}
-	return res
+
+	// if no Link in rss.Event, just apply template and trim resulted message directly
+	if !strings.Contains(tmpl, "{{.Link}}") {
+		return trimWithDots(applyTempl(ev, tmpl), max)
+	}
+
+	// remove all template elements to get the len of the message without it
+	// this is needed to calculate the length of the constants parts of the message,
+	// i.e. for "{{.Title}} blah {{.Link}}" it is 6, len(" blah ")
+	noTmpl := tmpl
+	for _, t := range []string{"{{.Link}}", "{{.Title}}", "{{.Text}}"} {
+		noTmpl = strings.Replace(noTmpl, t, "", -1)
+	}
+	noTmplLen := len([]rune(noTmpl))
+
+	textOrTitleMax := max - shortLinkLen - noTmplLen
+	switch {
+	case strings.Contains(tmpl, "{{.Text}}"): // first trim text, if in template
+		ev.Text = trimWithDots(ev.Text, textOrTitleMax)
+	case strings.Contains(tmpl, "{{.Title}}"): // if not, trim title if in template
+		ev.Title = trimWithDots(ev.Title, textOrTitleMax)
+	}
+
+	// apply template with altered event values.
+	// trim result and strip html tags too, just in case, for example if our template failed to parse record
+	// note: this may trim link too, but it's ok, our template is broken if it happens anyway
+	return trimWithDots(striphtmltags.StripTags(applyTempl(ev, tmpl)), max)
 }
 
 // getDump reads runtime stack and returns as a string

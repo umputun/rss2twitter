@@ -86,11 +86,26 @@ func TestDo(t *testing.T) {
 		{GUID: "1", Title: "t1", Link: "l1", Text: "ttt2"},
 		{GUID: "2", Title: "t2", Link: "l2", Text: "ttt2"},
 		{GUID: "3", Title: "t4", Link: "l3", Text: "ttt3"},
+		{GUID: "4", Title: "t5", Link: "http://example.com", Text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores "},
 	}}
 	ctx, cancel := context.WithCancel(context.Background())
 	do(ctx, &notif, &pub, "{{.Title}} - {{.Link}}")
 	cancel()
-	assert.Equal(t, "t1 - l1\nt2 - l2\nt4 - l3\n", pub.buf.String())
+	assert.Equal(t, "t1 - l1\nt2 - l2\nt4 - l3\nt5 - http://example.com\n", pub.buf.String())
+}
+
+func TestDoWithText(t *testing.T) {
+	pub := pubMock{buf: bytes.Buffer{}}
+	notif := notifierMock{delay: 100 * time.Millisecond, events: []rss.Event{
+		{GUID: "1", Title: "t1", Link: "l1", Text: "ttt2"},
+		{GUID: "2", Title: "t2", Link: "l2", Text: "ttt2"},
+		{GUID: "3", Title: "t4", Link: "l3", Text: "ttt3"},
+		{GUID: "4", Title: "t5", Link: "http://example.com", Text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores "},
+	}}
+	ctx, cancel := context.WithCancel(context.Background())
+	do(ctx, &notif, &pub, "{{.Text}} - {{.Link}}")
+	cancel()
+	assert.Equal(t, "ttt2 - l1\nttt2 - l2\nttt3 - l3\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores  - http://example.com\n", pub.buf.String())
 }
 
 func TestDoCanceled(t *testing.T) {
@@ -106,23 +121,51 @@ func TestDoCanceled(t *testing.T) {
 	assert.Equal(t, "t1 - l1 ttt2\n", pub.buf.String())
 }
 
-func TestFormat(t *testing.T) {
+func Test_formatMsg(t *testing.T) {
 	tbl := []struct {
-		inp  string
-		out  string
-		size int
+		inp  rss.Event
+		tmpl string
+		max  int
+		res  string
 	}{
-		{"blah", "blah", 100},
-		{"blah <p>xyx</p>", "blah xyx", 100},
-		{"blah <p>xyx</p> something 122 abcdefg 12345 qwer", "blah xyx ...", 15},
-		{"blah <p>xyx</p> something 122 abcdefg 12345 qwerty", "blah xyx something ...", 20},
-		{"<p>xyx</p><title>", "xyx", 20},
+		{rss.Event{Text: "test", Link: "link"}, "{{.Text}} :: {{.Link}} 12345", 100, "test :: link 12345"},
+		{rss.Event{Text: "test too long to fit to a <a href=blah>tweet</a>", Link: "link5678901234567890123"},
+			"{{.Text}} :: {{.Link}}",
+			50,
+			"test too long to...  :: link5678901234567890123",
+		},
+		{
+			rss.Event{Text: "test too long to fit to a tweet", Link: "link5678901234567890123"},
+			"12345 {{.Link}} xxx {{.Text}} yes",
+			50,
+			"12345 link5678901234567890123 xxx test...  yes",
+		},
+		{
+			rss.Event{Text: "test too long to fit to a <a href=example.com>tweet</a>"},
+			"12345 xxx blah blah {{.Text}} \n hmm 123456",
+			50,
+			"12345 xxx blah blah test too long to fit to a... ",
+		},
+		{
+			rss.Event{Text: `test <a href="https://example.com">ok\n yes?`, Link: "link5678901234567890123"},
+			"{{.Text}} :: {{.Link}}",
+			50,
+			"test ok\n yes? :: link5678901234567890123",
+		},
+		{
+			rss.Event{Title: "test too long to fit to a tweet", Link: "link5678901234567890123"},
+			"12345 {{.Link}} xxx {{.Title}} \n yes",
+			50,
+			"12345 link5678901234567890123 xxx test...  \n yes",
+		},
 	}
 
 	for i, tt := range tbl {
 		t.Run(fmt.Sprintf("check-%d", i), func(t *testing.T) {
-			out := format(tt.inp, tt.size)
-			assert.Equal(t, tt.out, out)
+			res := formatMsg(tt.inp, tt.tmpl, tt.max)
+			assert.Equal(t, tt.res, res)
+			assert.True(t, len(res) < tt.max, len(res))
+			t.Logf("res len: %d", len(res))
 		})
 	}
 }
