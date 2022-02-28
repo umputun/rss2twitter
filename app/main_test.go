@@ -171,6 +171,12 @@ func Test_formatMsg(t *testing.T) {
 			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores       Lorem ipsum dolor sit amet, consetetur...  - https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126",
 		},
 		{
+			rss.Event{Title: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores", Link: "https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126"},
+			"{{.Link}} - {{.Title}}",
+			279,
+			"https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores       Lorem ipsum dolor sit amet, consetetur... ",
+		},
+		{
 			rss.Event{Title: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores", Link: "https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126"},
 			"{{.Title}} - {{.Link}}",
 			279,
