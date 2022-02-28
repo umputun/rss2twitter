@@ -123,18 +123,6 @@ func formatMsg(ev rss.Event, tmpl string, max int) string {
 	ev.Title = striphtmltags.StripTags(ev.Title)
 	ev.Text = striphtmltags.StripTags(ev.Text)
 
-	applyTempl := func(ev rss.Event, tmpl string) string {
-		var res string
-		b1 := bytes.Buffer{}
-		if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, ev); err != nil { // nolint
-			// template failed to parse record, backup with predefined format
-			res = fmt.Sprintf("%s - %s", ev.Title, ev.Link)
-		} else {
-			res = b1.String()
-		}
-		return strings.Replace(res, `\n`, "\n", -1) // handle \n we may have in the template
-	}
-
 	trimWithDots := func(s string, max int) string {
 		if len([]rune(s)) <= max || max < 4 {
 			return s
@@ -148,6 +136,18 @@ func formatMsg(ev rss.Event, tmpl string, max int) string {
 			}
 		}
 		return string(snippet) + "... " // extra space at the end to make it look better if it has something after
+	}
+
+	applyTempl := func(ev rss.Event, tmpl string) string {
+		var res string
+		b1 := bytes.Buffer{}
+		if err := template.Must(template.New("twi").Parse(tmpl)).Execute(&b1, ev); err != nil { // nolint
+			// template failed to parse record, backup with predefined format
+			res = trimWithDots(fmt.Sprintf("%s - %s", ev.Title, ev.Link), max)
+		} else {
+			res = b1.String()
+		}
+		return strings.Replace(res, `\n`, "\n", -1) // handle \n we may have in the template
 	}
 
 	// if no Link in rss.Event, just apply template and trim resulted message directly
@@ -173,9 +173,7 @@ func formatMsg(ev rss.Event, tmpl string, max int) string {
 	}
 
 	// apply template with altered event values.
-	// trim result and strip html tags too, just in case, for example if our template failed to parse record
-	// note: this may trim link too, but it's ok, our template is broken if it happens anyway
-	return trimWithDots(striphtmltags.StripTags(applyTempl(ev, tmpl)), max)
+	return applyTempl(ev, tmpl)
 }
 
 // getDump reads runtime stack and returns as a string

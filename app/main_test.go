@@ -158,13 +158,30 @@ func Test_formatMsg(t *testing.T) {
 			50,
 			"12345 link5678901234567890123 xxx test...  \n yes",
 		},
+		{
+			rss.Event{Title: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126 sed diam voluptua. At vero eos et accusam et justo duo dolores", Link: "https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126"},
+			"{{.Title}} - {{.Link}}",
+			279,
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores       Lorem ipsum dolor sit amet, consetetur...  - https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126",
+		},
+		{
+			rss.Event{Title: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores", Link: "https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126"},
+			"{{.Title}} - {{.Link}}",
+			279,
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores       Lorem ipsum dolor sit amet, consetetur...  - https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126",
+		},
+		{
+			rss.Event{Title: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores", Link: "https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126"},
+			"{{.Title}} - {{.Link}}",
+			279,
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores - https://github.com/umputun/rss2twitter/blob/d5c89112e4eb8ed8d1d0717526804bc145202fe5/app/main.go#L126",
+		},
 	}
 
 	for i, tt := range tbl {
 		t.Run(fmt.Sprintf("check-%d", i), func(t *testing.T) {
 			res := formatMsg(tt.inp, tt.tmpl, tt.max)
 			assert.Equal(t, tt.res, res)
-			assert.True(t, len(res) < tt.max, len(res))
 			t.Logf("res len: %d", len(res))
 		})
 	}
